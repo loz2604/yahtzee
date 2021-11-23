@@ -1,0 +1,558 @@
+body{
+    /* background-color: rgb(94, 91, 91); */
+    background-color: rgb(61, 76, 90);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+#game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    /* border: solid black 2px; */
+}
+#rolls{
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Prompt', sans-serif;
+}
+#scoreSheet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    font-family: 'Prompt', sans-serif;
+    font-size: 60px;
+}
+h2{
+    font-family: 'Prompt', sans-serif;
+    font-size: 60px;
+}
+h3{
+    font-family: 'Prompt', sans-serif;
+    font-size: 40px;
+}
+.dice{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black;
+    flex-direction: row;
+    background-color: rgb(230, 230, 230);
+    width:500px;
+    padding: 10px;
+}
+#dice1{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice2{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice3{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice4{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice5{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice6{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice1_2{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice2_2{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice3_2{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice4_2{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice5_2{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice6_2{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice1_3{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice2_3{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice3_3{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice4_3{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice5_3{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice6_3{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice1_4{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice2_4{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice3_4{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice4_4{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice5_4{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice6_4{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice1_5{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice2_5{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice3_5{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice4_5{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice5_5{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#dice6_5{
+    margin:10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:80px;
+    display: none;
+}
+#gameOver{
+    display: none;
+}
+#yahtzeeBonus{
+    display: none;
+}
+#submitScore{
+    display:none;
+}
+.button{
+    padding:10px;
+    display:flex;
+    align-items: center;
+    width: fit-content;
+}
+#newGame{
+    border-radius: 0.4em;
+    display:none;
+    font-size: larger;
+    font-weight: bold;
+    font-family: 'Prompt', sans-serif;
+    background-color: lightslategrey;
+}
+#newGame:active{
+    background-color: darkslategrey;
+}
+#pressRoll{
+    padding:1px;
+    width:400px;
+}
+#hold{
+    width: 460px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    display: none;
+}
+#hold1{
+    border-radius: 0.4em;
+    padding: 5px;
+    width:60px;
+    font-size: medium;
+    font-weight: bold;
+    margin-right: 36px;
+    background-color: lightslategrey;
+}
+#hold2{
+    border-radius: 0.4em;
+    padding: 5px;
+    width:60px;
+    font-size: medium;
+    font-weight: bold;
+    margin-right: 36px;
+    background-color: lightslategrey;
+}
+#hold3{
+    border-radius: 0.4em;
+    padding: 5px;
+    width:60px;
+    font-size: medium;
+    font-weight: bold;
+    margin-right: 36px;
+    background-color: lightslategrey;
+}
+#hold4{
+    border-radius: 0.4em;
+    border-radius: 0.4em;
+    padding: 5px;
+    width:60px;
+    font-size: medium;
+    font-weight: bold;
+    margin-right: 36px;
+    background-color: lightslategrey;
+}
+#hold5{
+    border-radius: 0.4em;
+    padding: 5px;
+    width:60px;
+    font-size: medium;
+    font-weight: bold;
+    background-color: lightslategrey;
+}
+#roll{
+    border-radius: 0.4em;
+    padding: 5px;
+    width:80px;
+    font-size: larger;
+    font-weight: bold;
+    /* background-color: rgb(131, 170, 212); */
+    background-color: lightslategrey;
+}
+#roll:active{
+    background-color: darkslategrey;
+    /* background-color: rgb(169, 192, 216); */
+}
+table{
+    display: flex;
+    align-items: center;
+}
+th{
+    padding-left: 5px;
+    padding-right: 5px;
+    border:black solid 2px;
+    font-family: 'Prompt', sans-serif;
+    font-size: medium;
+    /* background-color: rgb(131, 170, 212); */
+    background-color: lightslategrey;
+}
+td{
+    border:black solid 2px;
+    font-family: 'Prompt', sans-serif;
+    padding-left: 5px;
+    padding-right: 5px;
+    /* background-color: rgb(169, 192, 216); */
+    background-color: rgb(139, 148, 156);
+}
+#submit1{
+   display:none;
+}
+#submit2{
+    display:none;
+ }
+ #submit3{
+    display:none;
+ }
+ #submit4{
+    display:none;
+ }
+ #submit5{
+    display:none;
+ }
+ #submit6{
+    display:none;
+ }
+ #submit7{
+    display:none;
+ }
+ #submit8{
+    display:none;
+ }
+ #submit9{
+    display:none;
+ }
+ #submit10{
+    display:none;
+ }
+ #submit11{
+    display:none;
+ }
+ #submit1{
+    display:none;
+ }
+ #submit12{
+    display:none;
+ }
+ #submit13{
+    display:none;
+ }
+ #submit14{
+    display:none;
+ }
+ #submit15{
+    display:none;
+ }
+ #submit16{
+    display:none;
+ }
+ #score1{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score2{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score3{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score4{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score5{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score6{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score7{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score8{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score9{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score10{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score11{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size:x-large;
+ }
+ #score12{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score13{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #totalScore{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #bonus{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #totalUpper{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #totalLower{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #totalUpper2{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #grandTotal{
+    /* display: flex;
+    justify-content: center; */
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }

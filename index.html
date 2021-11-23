@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Prompt:wght@400&display=swap"
+        rel="stylesheet">
+    <title>Yahtzee</title>
+</head>
+
+<body>
+    <div id="game">
+        <div class="heading">
+            <h1>Yahtzee</h1>
+        </div>
+        <div class="button"><button id="roll">Roll</button></div>
+        <div class="dice">
+            <img id="dice1" src="images/dice1.PNG ">
+            <img id="dice2" src="images/dice2.PNG ">
+            <img id="dice3" src="images/dice3.PNG ">
+            <img id="dice4" src="images/dice4.PNG ">
+            <img id="dice5" src="images/dice5.PNG ">
+            <img id="dice6" src="images/dice6.PNG ">
+
+            <img id="dice1_2" src="images/dice1.PNG ">
+            <img id="dice2_2" src="images/dice2.PNG ">
+            <img id="dice3_2" src="images/dice3.PNG ">
+            <img id="dice4_2" src="images/dice4.PNG ">
+            <img id="dice5_2" src="images/dice5.PNG ">
+            <img id="dice6_2" src="images/dice6.PNG ">
+
+            <img id="dice1_3" src="images/dice1.PNG ">
+            <img id="dice2_3" src="images/dice2.PNG ">
+            <img id="dice3_3" src="images/dice3.PNG ">
+            <img id="dice4_3" src="images/dice4.PNG ">
+            <img id="dice5_3" src="images/dice5.PNG ">
+            <img id="dice6_3" src="images/dice6.PNG ">
+
+
+            <img id="dice1_4" src="images/dice1.PNG ">
+            <img id="dice2_4" src="images/dice2.PNG ">
+            <img id="dice3_4" src="images/dice3.PNG ">
+            <img id="dice4_4" src="images/dice4.PNG ">
+            <img id="dice5_4" src="images/dice5.PNG ">
+            <img id="dice6_4" src="images/dice6.PNG ">
+
+
+            <img id="dice1_5" src="images/dice1.PNG ">
+            <img id="dice2_5" src="images/dice2.PNG ">
+            <img id="dice3_5" src="images/dice3.PNG ">
+            <img id="dice4_5" src="images/dice4.PNG ">
+            <img id="dice5_5" src="images/dice5.PNG ">
+            <img id="dice6_5" src="images/dice6.PNG ">
+
+            <img id="pressRoll" src="images/press_roll.png">
+        </div>
+        <div id="gameOver">
+            <h3>Game Over!</h2>
+        </div>
+        <div id="yahtzeeBonus">
+            <h3>Please Submit Another Score</h2>
+        </div>
+        <div id="submitScore">
+            <h3>Submit Score</h2>
+        </div>
+
+        <div id="hold">
+            <button id="hold1">Hold</button>
+            <button id="hold2">Hold</button>
+            <button id="hold3">Hold</button>
+            <button id="hold4">Hold</button>
+            <button id="hold5">Hold</button>
+        </div>
+
+        <div class="button"><button id="newGame">New Game</button></div>
+        <div id="rolls">
+            <div id="showRolls"></div>
+        </div>
+
+    </div>
+    <div id="scoreSheet">
+        <table>
+            <tr>
+                <th>Upper Section</th>
+                <th>How To Score</th>
+                <th>Score</th>
+                <!-- <th>Submit</th> -->
+            </tr>
+            <tr>
+                <td>Aces = 1</td>
+                <td>Count And Add Only Aces</td>
+                <td id="score1"></td>
+                <td id="a"><input id="ones" type="checkbox"><button id="submit1">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>Twos = 2</td>
+                <td>Count And Add Only Twos</td>
+                <td id="score2"></td>
+                <td id="b"><input id="twos" type="checkbox"><button id="submit2">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>Threes = 3</td>
+                <td>Count And Add Only Threes</td>
+                <td id="score3"></td>
+                <td id="c"><input id="threes" type="checkbox"><button id="submit3">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>Fours = 4</td>
+                <td>Count And Add Only Fours</td>
+                <td id="score4"></td>
+                <td id="d"><input id="fours" type="checkbox"><button id="submit4">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>Fives = 5</td>
+                <td>Count And Add Only Fives</td>
+                <td id="score5"></td>
+                <td id="e"><input id="fives" type="checkbox"><button id="submit5">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>Sixes = 6</td>
+                <td>Count And Add Only Sixes</td>
+                <td id="score6"></td>
+                <td id="f"><input id="sixes" type="checkbox"><button id="submit6">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>TOTAL SCORE</td>
+                <td></td>
+                <td id="totalScore"></td>
+            </tr>
+            <tr>
+                <td>BONUS (If Total Score Is 63 Or Over)</td>
+                <td>Score 35</td>
+                <td id="bonus"></td>
+            </tr>
+            <tr>
+                <td>TOTAL Of Upper Section</td>
+                <td></td>
+                <td id="totalUpper"></td>
+            </tr>
+            <tr>
+                <th>Lower Section</th>
+            </tr>
+            <tr>
+                <td>3 Of A Kind</td>
+                <td>Add Total Of All Dice</td>
+                <td id="score7"></td>
+                <td id="g"><input id="threeOfAKind" type="checkbox"><button id="submit7">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>4 Of A Kind</td>
+                <td>Add Total Of All Dice</td>
+                <td id="score8"></td>
+                <td id="h"><input id="fourOfAKind" type="checkbox"><button id="submit8">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>Full House</td>
+                <td>Score 25</td>
+                <td id="score9"></td>
+                <td id="i"><input id="fullHouse" type="checkbox"><button id="submit9">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>Small Straight (Sequence Of 4)</td>
+                <td>Score 30</td>
+                <td id="score10"></td>
+                <td id="j"><input id="smallStraight" type="checkbox"><button id="submit10">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>Large Straight (Sequence Of 5)</td>
+                <td>Score 40</td>
+                <td id="score11"></td>
+                <td id="k"><input id="largeStraight" type="checkbox"><button id="submit11">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>Yahtzee (5 Of A Kind)</td>
+                <td>Score 50</td>
+                <td id="score12"></td>
+                <td id="l"><input id="yahtzee" type="checkbox"><button id="submit12">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>Chance</td>
+                <td>Score Total Of All 5 Dice</td>
+                <td id="score13"></td>
+                <td id="m"><input id="chance" type="checkbox"><button id="submit13">Submit</button></td>
+
+            </tr>
+            <tr>
+                <td>Yahtzee Bonus</td>
+                <td>Tick For Each Bonus</td>
+                <td></td>
+                <td id="n"><input id="y1" type="checkbox"><button id="submit14">Submit</button></td>
+                <td id="o"><input id="y2" type="checkbox"><button id="submit15">Submit</button></td>
+                <td id="p"><input id="y3" type="checkbox"><button id="submit16">Submit</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Score 100 Per Tick </td>
+                <td id="score14"></td>
+            </tr>
+            <tr>
+                <td>TOTAL Of Lower Section</td>
+                <td></td>
+                <td id="totalLower"></td>
+            </tr>
+            <tr>
+                <td>TOTAL Of Upper Section</td>
+                <td></td>
+                <td id="totalUpper2"></td>
+            </tr>
+            <tr>
+                <td>GRAND TOTAL</td>
+                <td></td>
+                <td id="grandTotal"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
