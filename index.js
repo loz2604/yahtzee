@@ -962,7 +962,6 @@ roll.addEventListener("click", () => {
             randomNumber5 = Math.floor(Math.random() * 6) + 1;
             greyDice5();
         }
-
         let randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         console.log(randomNumbers)
         rolls += 1;
@@ -981,8 +980,6 @@ roll.addEventListener("click", () => {
         }
     }, 600)
 });
-
-
 submit1.addEventListener("click", () => {
     hideBlackDice();
     hideDice();
