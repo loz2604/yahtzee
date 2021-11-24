@@ -7,6 +7,12 @@ const dice3 = document.getElementById("dice3");
 const dice4 = document.getElementById("dice4");
 const dice5 = document.getElementById("dice5");
 const dice6 = document.getElementById("dice6");
+const dice1black = document.getElementById("dice1black");
+const dice2black = document.getElementById("dice2black");
+const dice3black = document.getElementById("dice3black");
+const dice4black = document.getElementById("dice4black");
+const dice5black = document.getElementById("dice5black");
+const dice6black = document.getElementById("dice6black");
 const press_roll = document.getElementById("press_roll");
 
 let hold = document.getElementById("hold")
@@ -104,6 +110,78 @@ function reload() {
 }
 newGame.addEventListener("click", reload, false);
 
+function hideDice() {
+    dice1.style.display = "none";
+    dice2.style.display = "none";
+    dice3.style.display = "none";
+    dice4.style.display = "none";
+    dice5.style.display = "none";
+    dice6.style.display = "none";
+
+    dice1_2.style.display = "none";
+    dice2_2.style.display = "none";
+    dice3_2.style.display = "none";
+    dice4_2.style.display = "none";
+    dice5_2.style.display = "none";
+    dice6_2.style.display = "none";
+
+    dice1_3.style.display = "none";
+    dice2_3.style.display = "none";
+    dice3_3.style.display = "none";
+    dice4_3.style.display = "none";
+    dice5_3.style.display = "none";
+    dice6_3.style.display = "none";
+
+    dice1_4.style.display = "none";
+    dice2_4.style.display = "none";
+    dice3_4.style.display = "none";
+    dice4_4.style.display = "none";
+    dice5_4.style.display = "none";
+    dice6_4.style.display = "none";
+
+    dice1_5.style.display = "none";
+    dice2_5.style.display = "none";
+    dice3_5.style.display = "none";
+    dice4_5.style.display = "none";
+    dice5_5.style.display = "none";
+    dice6_5.style.display = "none";
+};
+function hideBlackDice() {
+    dice1black.style.display = "none";
+    dice2black.style.display = "none";
+    dice3black.style.display = "none";
+    dice4black.style.display = "none";
+    dice5black.style.display = "none";
+    dice6black.style.display = "none";
+
+    dice1_2black.style.display = "none";
+    dice2_2black.style.display = "none";
+    dice3_2black.style.display = "none";
+    dice4_2black.style.display = "none";
+    dice5_2black.style.display = "none";
+    dice6_2black.style.display = "none";
+
+    dice1_3black.style.display = "none";
+    dice2_3black.style.display = "none";
+    dice3_3black.style.display = "none";
+    dice4_3black.style.display = "none";
+    dice5_3black.style.display = "none";
+    dice6_3black.style.display = "none";
+
+    dice1_4black.style.display = "none";
+    dice2_4black.style.display = "none";
+    dice3_4black.style.display = "none";
+    dice4_4black.style.display = "none";
+    dice5_4black.style.display = "none";
+    dice6_4black.style.display = "none";
+
+    dice1_5black.style.display = "none";
+    dice2_5black.style.display = "none";
+    dice3_5black.style.display = "none";
+    dice4_5black.style.display = "none";
+    dice5_5black.style.display = "none";
+    dice6_5black.style.display = "none";
+}
 ones.addEventListener("click", () => {
     if (ones != true) {
         ones = true;
@@ -286,17 +364,66 @@ function changeColour1() {
 function changeColour2() {
     document.getElementById("hold1").style.backgroundColor = "lightslategrey"
 }
+
 hold1.addEventListener("click", () => {
     if (hold1 != true) {
         hold1 = true;
         hold1Text = "Held";
         changeText1("Held");
         changeColour1();
+        if (randomNumber1 == 1) {
+            dice1.style.display = "none";
+            dice1black.style.display = "block";
+        }
+        if (randomNumber1 == 2) {
+            dice2.style.display = "none";
+            dice2black.style.display = "block";
+        }
+        if (randomNumber1 == 3) {
+            dice3.style.display = "none";
+            dice3black.style.display = "block"
+        }
+        if (randomNumber1 == 4) {
+            dice4.style.display = "none";
+            dice4black.style.display = "block";
+        }
+        if (randomNumber1 == 5) {
+            dice5.style.display = "none";
+            dice5black.style.display = "block";
+        }
+        if (randomNumber1 == 6) {
+            dice6.style.display = "none";
+            dice6black.style.display = "block";
+        }
     } else if (hold1 != false) {
         hold1 = false;
         hold1Text = "Hold";
         changeText1("Hold");
         changeColour2()
+        if (randomNumber1 == 1) {
+            dice1.style.display = "block";
+            dice1black.style.display = "none";
+        }
+        if (randomNumber1 == 2) {
+            dice2.style.display = "block";
+            dice2black.style.display = "none";
+        }
+        if (randomNumber1 == 3) {
+            dice3.style.display = "block";
+            dice3black.style.display = "none"
+        }
+        if (randomNumber1 == 4) {
+            dice4.style.display = "block";
+            dice4black.style.display = "none";
+        }
+        if (randomNumber1 == 5) {
+            dice5.style.display = "block";
+            dice5black.style.display = "none";
+        }
+        if (randomNumber1 == 6) {
+            dice6.style.display = "block";
+            dice6black.style.display = "none";
+        }
     }
     console.log("hold1 is ", hold1)
 });
@@ -312,11 +439,59 @@ hold2.addEventListener("click", () => {
         hold2Text = "Held";
         changeText2("Held");
         changeColour3();
+        if (randomNumber2 == 1) {
+            dice1_2.style.display = "none"
+            dice1_2black.style.display = "block";
+        }
+        if (randomNumber2 == 2) {
+            dice2_2.style.display = "none";
+            dice2_2black.style.display = "block";
+        }
+        if (randomNumber2 == 3) {
+            dice3_2.style.display = "none";
+            dice3_2black.style.display = "block";
+        }
+        if (randomNumber2 == 4) {
+            dice4_2.style.display = "none";
+            dice4_2black.style.display = "block";
+        }
+        if (randomNumber2 == 5) {
+            dice5_2.style.display = "none";
+            dice5_2black.style.display = "block";
+        }
+        if (randomNumber2 == 6) {
+            dice6_2.style.display = "none";
+            dice6_2black.style.display = "block";
+        }
     } else {
         hold2 = false;
         hold2Text = "Hold";
         changeText2("Hold");
         changeColour4();
+        if (randomNumber2 == 1) {
+            dice1_2.style.display = "block";
+            dice1_2black.style.display = "none";
+        }
+        if (randomNumber2 == 2) {
+            dice2_2.style.display = "block";
+            dice2_2black.style.display = "none";
+        }
+        if (randomNumber2 == 3) {
+            dice3_2.style.display = "block";
+            dice3_2black.style.display = "none"
+        }
+        if (randomNumber2 == 4) {
+            dice4_2.style.display = "block";
+            dice4_2black.style.display = "none";
+        }
+        if (randomNumber2 == 5) {
+            dice5_2.style.display = "block";
+            dice5_2black.style.display = "none";
+        }
+        if (randomNumber2 == 6) {
+            dice6_2.style.display = "block";
+            dice6_2black.style.display = "none";
+        }
     }
     console.log("hold2 is ", hold2)
 });
@@ -332,11 +507,59 @@ hold3.addEventListener("click", () => {
         hold3Text = "Held";
         changeText3("Held");
         changeColour5();
+        if (randomNumber3 == 1) {
+            dice1_3.style.display = "none";
+            dice1_3black.style.display = "block";
+        }
+        if (randomNumber3 == 2) {
+            dice2_3.style.display = "none";
+            dice2_3black.style.display = "block";
+        }
+        if (randomNumber3 == 3) {
+            dice3_3.style.display = "none";
+            dice3_3black.style.display = "block";
+        }
+        if (randomNumber3 == 4) {
+            dice4_3.style.display = "none";
+            dice4_3black.style.display = "block";
+        }
+        if (randomNumber3 == 5) {
+            dice5_3.style.display = "none";
+            dice5_3black.style.display = "block";
+        }
+        if (randomNumber3 == 6) {
+            dice6_3.style.display = "none";
+            dice6_3black.style.display = "block";
+        }
     } else {
         hold3 = false;
         hold3Text = "Hold";
         changeText3("Hold");
         changeColour6();
+        if (randomNumber3 == 1) {
+            dice1_3.style.display = "block";
+            dice1_3black.style.display = "none";
+        }
+        if (randomNumber3 == 2) {
+            dice2_3.style.display = "block";
+            dice2_3black.style.display = "none";
+        }
+        if (randomNumber3 == 3) {
+            dice3_3.style.display = "block";
+            dice3_3black.style.display = "none"
+        }
+        if (randomNumber3 == 4) {
+            dice4_3.style.display = "block";
+            dice4_3black.style.display = "none";
+        }
+        if (randomNumber3 == 5) {
+            dice5_3.style.display = "block";
+            dice5_3black.style.display = "none";
+        }
+        if (randomNumber3 == 6) {
+            dice6_3.style.display = "block";
+            dice6_3black.style.display = "none";
+        }
     }
     console.log("hold3 is ", hold3)
 });
@@ -352,11 +575,59 @@ hold4.addEventListener("click", () => {
         hold4Text = "Held";
         changeText4("Held");
         changeColour7();
+        if (randomNumber4 == 1) {
+            dice1_4.style.display = "none";
+            dice1_4black.style.display = "block";
+        }
+        if (randomNumber4 == 2) {
+            dice2_4.style.display = "none";
+            dice2_4black.style.display = "block";
+        }
+        if (randomNumber4 == 3) {
+            dice3_4.style.display = "none";
+            dice3_4black.style.display = "block";
+        }
+        if (randomNumber4 == 4) {
+            dice4_4.style.display = "none";
+            dice4_4black.style.display = "block";
+        }
+        if (randomNumber4 == 5) {
+            dice5_4.style.display = "none";
+            dice5_4black.style.display = "block";
+        }
+        if (randomNumber4 == 6) {
+            dice6_4.style.display = "none";
+            dice6_4black.style.display = "block";
+        }
     } else {
         hold4 = false;
         hold4Text = "Hold";
         changeText4("Hold");
         changeColour8();
+        if (randomNumber4 == 1) {
+            dice1_4.style.display = "block";
+            dice1_4black.style.display = "none";
+        }
+        if (randomNumber4 == 2) {
+            dice2_4.style.display = "block";
+            dice2_4black.style.display = "none";
+        }
+        if (randomNumber4 == 3) {
+            dice3_4.style.display = "block";
+            dice3_4black.style.display = "none"
+        }
+        if (randomNumber4 == 4) {
+            dice4_4.style.display = "block";
+            dice4_4black.style.display = "none";
+        }
+        if (randomNumber4 == 5) {
+            dice5_4.style.display = "block";
+            dice5_4black.style.display = "none";
+        }
+        if (randomNumber4 == 6) {
+            dice6_4.style.display = "block";
+            dice6_4black.style.display = "none";
+        }
     }
     console.log("hold4 is ", hold4)
 });
@@ -372,16 +643,65 @@ hold5.addEventListener("click", () => {
         hold5Text = "Held";
         changeText5("Held");
         changeColour9();
+        if (randomNumber5 == 1) {
+            dice1_5.style.display = "none";
+            dice1_5black.style.display = "block";
+        }
+        if (randomNumber5 == 2) {
+            dice2_5.style.display = "none";
+            dice2_5black.style.display = "block";
+        }
+        if (randomNumber5 == 3) {
+            dice3_5.style.display = "none";
+            dice3_5black.style.display = "block";
+        }
+        if (randomNumber5 == 4) {
+            dice4_5.style.display = "none";
+            dice4_5black.style.display = "block";
+        }
+        if (randomNumber5 == 5) {
+            dice5_5.style.display = "none";
+            dice5_5black.style.display = "block";
+        }
+        if (randomNumber5 == 6) {
+            dice6_5.style.display = "none";
+            dice6_5black.style.display = "block";
+        }
     } else {
         hold5 = false;
         hold5Text = "Hold";
         changeText5("Hold");
         changeColour10();
+        if (randomNumber5 == 1) {
+            dice1_5.style.display = "block";
+            dice1_5black.style.display = "none";
+        }
+        if (randomNumber5 == 2) {
+            dice2_5.style.display = "block";
+            dice2_5black.style.display = "none";
+        }
+        if (randomNumber5 == 3) {
+            dice3_5.style.display = "block";
+            dice3_5black.style.display = "none"
+        }
+        if (randomNumber5 == 4) {
+            dice4_5.style.display = "block";
+            dice4_5black.style.display = "none";
+        }
+        if (randomNumber5 == 5) {
+            dice5_5.style.display = "block";
+            dice5_5black.style.display = "none";
+        }
+        if (randomNumber5 == 6) {
+            dice6_5.style.display = "block";
+            dice6_5black.style.display = "none";
+        }
     }
     console.log("hold5 is ", hold5)
 });
 roll.addEventListener("click", () => {
     yahtzeeBonus.style.display = "none";
+    pressRoll.style.display = "none";
     showRolls.style.display = "block";
     if (submit1 != true) {
         a.style.display = "block";
@@ -471,111 +791,157 @@ roll.addEventListener("click", () => {
 
     if (hold1 != true) {
         randomNumber1 = Math.floor(Math.random() * 6) + 1;
+        if (randomNumber1 == 1) {
+            dice1.style.display = "block";
+        }
+        if (randomNumber1 == 2) {
+            dice2.style.display = "block";
+        }
+        if (randomNumber1 == 3) {
+            dice3.style.display = "block";
+        }
+        if (randomNumber1 == 4) {
+            dice4.style.display = "block";
+        }
+        if (randomNumber1 == 5) {
+            dice5.style.display = "block";
+        }
+        if (randomNumber1 == 6) {
+            dice6.style.display = "block";
+        }
+    } else {
+        if (randomNumber1 == 1) {
+            dice1.style.display = "none";
+            dice1black.style.display = "block";
+        }
+        if (randomNumber1 == 2) {
+            dice2.style.display = "none";
+            dice2black.style.display = "block";
+        }
+        if (randomNumber1 == 3) {
+            dice3.style.display = "none";
+            dice3black.style.display = "block";
+        }
+        if (randomNumber1 == 4) {
+            dice4.style.display = "none";
+            dice4black.style.display = "block";
+        }
+        if (randomNumber1 == 5) {
+            dice5.style.display = "none";
+            dice5black.style.display = "block";
+        }
+        if (randomNumber1 == 6) {
+            dice6.style.display = "none";
+            dice6black.style.display = "block";
+        }
     }
     if (hold2 != true) {
         randomNumber2 = Math.floor(Math.random() * 6) + 1;
+        if (randomNumber2 == 1) {
+            dice1_2.style.display = "block";
+
+        }
+        if (randomNumber2 == 2) {
+            dice2_2.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber2 == 3) {
+            dice3_2.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber2 == 4) {
+            dice4_2.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber2 == 5) {
+            dice5_2.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber2 == 6) {
+            dice6_2.style.display = "block";
+            pressRoll.style.display = "none";
+        }
     }
     if (hold3 != true) {
         randomNumber3 = Math.floor(Math.random() * 6) + 1;
+        if (randomNumber3 == 1) {
+            dice1_3.style.display = "block";
+        }
+        if (randomNumber3 == 2) {
+            dice2_3.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber3 == 3) {
+            dice3_3.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber3 == 4) {
+            dice4_3.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber3 == 5) {
+            dice5_3.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber3 == 6) {
+            dice6_3.style.display = "block";
+            pressRoll.style.display = "none";
+        }
     }
     if (hold4 != true) {
         randomNumber4 = Math.floor(Math.random() * 6) + 1;
+        if (randomNumber4 == 1) {
+            dice1_4.style.display = "block";
+        }
+        if (randomNumber4 == 2) {
+            dice2_4.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber4 == 3) {
+            dice3_4.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber4 == 4) {
+            dice4_4.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber4 == 5) {
+            dice5_4.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber4 == 6) {
+            dice6_4.style.display = "block";
+            pressRoll.style.display = "none";
+        }
     }
     if (hold5 != true) {
         randomNumber5 = Math.floor(Math.random() * 6) + 1;
+        if (randomNumber5 == 1) {
+            dice1_5.style.display = "block";
+        }
+        if (randomNumber5 == 2) {
+            dice2_5.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber5 == 3) {
+            dice3_5.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber5 == 4) {
+            dice4_5.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber5 == 5) {
+            dice5_5.style.display = "block";
+            pressRoll.style.display = "none";
+        }
+        if (randomNumber5 == 6) {
+            dice6_5.style.display = "block";
+            pressRoll.style.display = "none";
+        }
     }
 
-    if (randomNumber1 == 1) {
-        dice1.style.display = "block";
-    } if (randomNumber2 == 1) {
-        dice1_2.style.display = "block";
-    } if (randomNumber3 == 1) {
-        dice1_3.style.display = "block";
-    } if (randomNumber4 == 1) {
-        dice1_4.style.display = "block";
-    } if (randomNumber5 == 1) {
-        dice1_5.style.display = "block";
-    }
-    if (randomNumber1 == 2) {
-        dice2.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber2 == 2) {
-        dice2_2.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber3 == 2) {
-        dice2_3.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber4 == 2) {
-        dice2_4.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber5 == 2) {
-        dice2_5.style.display = "block";
-        pressRoll.style.display = "none";
-    }
-    if (randomNumber1 == 3) {
-        dice3.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber2 == 3) {
-        dice3_2.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber3 == 3) {
-        dice3_3.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber4 == 3) {
-        dice3_4.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber5 == 3) {
-        dice3_5.style.display = "block";
-        pressRoll.style.display = "none";
-    }
-    if (randomNumber1 == 4) {
-        dice4.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber2 == 4) {
-        dice4_2.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber3 == 4) {
-        dice4_3.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber4 == 4) {
-        dice4_4.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber5 == 4) {
-        dice4_5.style.display = "block";
-        pressRoll.style.display = "none";
-    }
-    if (randomNumber1 == 5) {
-        dice5.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber2 == 5) {
-        dice5_2.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber3 == 5) {
-        dice5_3.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber4 == 5) {
-        dice5_4.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber5 == 5) {
-        dice5_5.style.display = "block";
-        pressRoll.style.display = "none";
-    }
-    if (randomNumber1 == 6) {
-        dice6.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber2 == 6) {
-        dice6_2.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber3 == 6) {
-        dice6_3.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber4 == 6) {
-        dice6_4.style.display = "block";
-        pressRoll.style.display = "none";
-    } if (randomNumber5 == 6) {
-        dice6_5.style.display = "block";
-        pressRoll.style.display = "none";
-    }
+
     let randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
     console.log(randomNumbers)
     rolls += 1;
@@ -604,42 +970,9 @@ roll.addEventListener("click", () => {
     }
 });
 submit1.addEventListener("click", () => {
+    hideBlackDice();
+    hideDice();
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
-
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -732,40 +1065,8 @@ submit1.addEventListener("click", () => {
 
 submit2.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -855,40 +1156,8 @@ submit2.addEventListener("click", () => {
 });
 submit3.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     submitScore.style.display = "none";
     showRolls.style.display = "none";
     submitCount++;
@@ -979,40 +1248,8 @@ submit3.addEventListener("click", () => {
 });
 submit4.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -1102,40 +1339,8 @@ submit4.addEventListener("click", () => {
 });
 submit5.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -1225,40 +1430,8 @@ submit5.addEventListener("click", () => {
 });
 submit6.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -1348,40 +1521,8 @@ submit6.addEventListener("click", () => {
 });
 submit7.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -1482,40 +1623,8 @@ submit7.addEventListener("click", () => {
 });
 submit8.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -1614,40 +1723,8 @@ submit8.addEventListener("click", () => {
 });
 submit9.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -1734,40 +1811,8 @@ submit9.addEventListener("click", () => {
 
 submit10.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -1857,40 +1902,8 @@ submit10.addEventListener("click", () => {
 })
 submit11.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -1973,40 +1986,8 @@ submit11.addEventListener("click", () => {
 })
 submit12.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -2085,40 +2066,8 @@ submit12.addEventListener("click", () => {
 });
 submit13.addEventListener("click", () => {
     pressRoll.style.display = "block";
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideBlackDice();
+    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
