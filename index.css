@@ -480,8 +480,10 @@ h3{
     display:flex;
     align-items: center;
     width: fit-content;
+
 }
 #newGame{
+    cursor: pointer;
     border-radius: 0.4em;
     display:none;
     font-size: larger;
@@ -504,6 +506,7 @@ h3{
     display: none;
 }
 #hold1{
+    cursor: pointer;
     border-radius: 0.4em;
     padding: 5px;
     width:60px;
@@ -513,6 +516,7 @@ h3{
     background-color: lightslategrey;
 }
 #hold2{
+    cursor: pointer;
     border-radius: 0.4em;
     padding: 5px;
     width:60px;
@@ -522,6 +526,7 @@ h3{
     background-color: lightslategrey;
 }
 #hold3{
+    cursor: pointer;
     border-radius: 0.4em;
     padding: 5px;
     width:60px;
@@ -531,6 +536,7 @@ h3{
     background-color: lightslategrey;
 }
 #hold4{
+    cursor: pointer;
     border-radius: 0.4em;
     border-radius: 0.4em;
     padding: 5px;
@@ -541,6 +547,7 @@ h3{
     background-color: lightslategrey;
 }
 #hold5{
+    cursor: pointer;
     border-radius: 0.4em;
     padding: 5px;
     width:60px;
@@ -549,6 +556,7 @@ h3{
     background-color: lightslategrey;
 }
 #roll{
+    cursor: pointer;
     border-radius: 0.4em;
     padding: 5px;
     width:80px;
@@ -579,190 +587,225 @@ td{
     font-family: 'Prompt', sans-serif;
     padding-left: 5px;
     padding-right: 5px;
-    /* background-color: rgb(169, 192, 216); */
-    background-color: rgb(139, 148, 156);
 }
+.first{
+    background-color: rgb(158, 162, 165);
+}
+.second{
+    background-color: rgb(132, 139, 146);
+}
+
 #submit1{
    display:none;
+   cursor: pointer;
 }
 #submit2{
     display:none;
+    cursor: pointer;
  }
  #submit3{
     display:none;
+    cursor: pointer;
  }
  #submit4{
     display:none;
+    cursor: pointer;
  }
  #submit5{
     display:none;
+    cursor: pointer;
  }
  #submit6{
     display:none;
+    cursor: pointer;
  }
  #submit7{
     display:none;
+    cursor: pointer;
  }
  #submit8{
     display:none;
+    cursor: pointer;
  }
  #submit9{
     display:none;
+    cursor: pointer;
  }
  #submit10{
     display:none;
+    cursor: pointer;
  }
  #submit11{
     display:none;
+    cursor: pointer;
  }
  #submit1{
     display:none;
+    cursor: pointer;
  }
  #submit12{
     display:none;
+    cursor: pointer;
  }
  #submit13{
     display:none;
+    cursor: pointer;
  }
  #submit14{
     display:none;
+    cursor: pointer;
  }
  #submit15{
     display:none;
+    cursor: pointer;
  }
  #submit16{
     display:none;
+    cursor: pointer;
  }
  #score1{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #score2{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #score3{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #score4{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #score5{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #score6{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #score7{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #score8{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #score9{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #score10{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #score11{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size:x-large;
  }
  #score12{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #score13{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #totalScore{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #bonus{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #totalUpper{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #totalLower{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #totalUpper2{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
  #grandTotal{
-    /* display: flex;
-    justify-content: center; */
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
  }
+ #submitTitle{
+     display: none;
+ }
+#ones{
+    cursor: pointer;
+}
+#twos{
+    cursor: pointer;
+}
+#threes{
+    cursor: pointer;
+}
+#fours{
+    cursor: pointer;
+}
+#fives{
+    cursor: pointer;
+}
+#sixes{
+    cursor: pointer;
+}
+#threeOfAKind{
+    cursor: pointer;
+}
+#fourOfAKind{
+    cursor: pointer;
+}
+#fullHouse{
+    cursor: pointer;
+}
+#smallStraight{
+    cursor: pointer;
+}
+#largeStraight{
+    cursor: pointer;
+}
+#yahtzee{
+    cursor: pointer;
+}
+#chance{
+    cursor: pointer;
+}
+#y1{
+    cursor: pointer;
+}
+#y2{
+    cursor: pointer;
+}
+#y3{
+    cursor: pointer;
+}

@@ -131,6 +131,10 @@ function resetHold() {
     changeColour10();
     hold.style.display = "none";
 }
+function finalScore() {
+    let finalTotal = totalUp + scoreLower;
+    document.getElementById("finalScore").innerHTML = (`Final Score: ${finalTotal}`);
+}
 function finishGame() {
     submitScore.style.display = "none";
     roll.style.display = "none";
@@ -140,6 +144,7 @@ function finishGame() {
     n.style.display = "none";
     o.style.display = "none";
     p.style.display = "none";
+    finalScore();
     console.log("game over")
 }
 function hideTickBox() {
@@ -160,6 +165,7 @@ function hideTickBox() {
     o.style.display = "none";
     p.style.display = "none";
 }
+hideTickBox();
 function hideDice() {
     dice1.style.display = "none";
     dice2.style.display = "none";
@@ -496,6 +502,7 @@ function upperBonus() {
     if (score >= 63) {
         bonusUp = 35;
         bonus.innerHTML = bonusUp;
+        changeBack7();
     } else {
         bonusUp = 0;
         bonus.innerHTML = bonusUp;
@@ -553,6 +560,82 @@ function changeColour9() {
 function changeColour10() {
     document.getElementById("hold5").style.backgroundColor = "lightslategrey"
 }
+
+function changeBack1() {
+    document.getElementById("row1").style.backgroundColor = "lightslategrey"
+    document.getElementById("row1_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score1").style.backgroundColor = "lightslategrey"
+}
+function changeBack2() {
+    document.getElementById("row2").style.backgroundColor = "lightslategrey"
+    document.getElementById("row2_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score2").style.backgroundColor = "lightslategrey"
+}
+function changeBack3() {
+    document.getElementById("row3").style.backgroundColor = "lightslategrey"
+    document.getElementById("row3_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score3").style.backgroundColor = "lightslategrey"
+}
+function changeBack4() {
+    document.getElementById("row4").style.backgroundColor = "lightslategrey"
+    document.getElementById("row4_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score4").style.backgroundColor = "lightslategrey"
+}
+function changeBack5() {
+    document.getElementById("row5").style.backgroundColor = "lightslategrey"
+    document.getElementById("row5_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score5").style.backgroundColor = "lightslategrey"
+}
+function changeBack6() {
+    document.getElementById("row6").style.backgroundColor = "lightslategrey"
+    document.getElementById("row6_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score6").style.backgroundColor = "lightslategrey"
+}
+function changeBack7() {
+    document.getElementById("row7").style.backgroundColor = "lightslategrey"
+    document.getElementById("row7_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("bonus").style.backgroundColor = "lightslategrey"
+}
+function changeBack8() {
+    document.getElementById("row8").style.backgroundColor = "lightslategrey"
+    document.getElementById("row8_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score7").style.backgroundColor = "lightslategrey"
+}
+function changeBack9() {
+    document.getElementById("row9").style.backgroundColor = "lightslategrey"
+    document.getElementById("row9_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score8").style.backgroundColor = "lightslategrey"
+}
+function changeBack10() {
+    document.getElementById("row10").style.backgroundColor = "lightslategrey"
+    document.getElementById("row10_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score9").style.backgroundColor = "lightslategrey"
+}
+function changeBack11() {
+    document.getElementById("row11").style.backgroundColor = "lightslategrey"
+    document.getElementById("row11_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score10").style.backgroundColor = "lightslategrey"
+}
+function changeBack12() {
+    document.getElementById("row12").style.backgroundColor = "lightslategrey"
+    document.getElementById("row12_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score11").style.backgroundColor = "lightslategrey"
+}
+function changeBack13() {
+    document.getElementById("row13").style.backgroundColor = "lightslategrey"
+    document.getElementById("row13_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score12").style.backgroundColor = "lightslategrey"
+}
+function changeBack14() {
+    document.getElementById("row14").style.backgroundColor = "lightslategrey"
+    document.getElementById("row14_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("score13").style.backgroundColor = "lightslategrey"
+}
+function changeBack15() {
+    document.getElementById("row15").style.backgroundColor = "lightslategrey"
+    document.getElementById("row15_2").style.backgroundColor = "lightslategrey"
+    document.getElementById("row15_3").style.backgroundColor = "lightslategrey"
+}
 ones.addEventListener("click", () => {
     if (ones != true) {
         ones = true;
@@ -563,7 +646,6 @@ ones.addEventListener("click", () => {
     }
     console.log("ones is ", ones)
 });
-
 twos.addEventListener("click", () => {
     if (twos != true) {
         twos = true;
@@ -802,6 +884,7 @@ hold5.addEventListener("click", () => {
 });
 
 roll.addEventListener("click", () => {
+    submitTitle.style.display = "block";
     yahtzeeBonus.style.display = "none";
     pressRoll.style.display = "none";
     showRolls.style.display = "block";
@@ -910,7 +993,7 @@ submit1.addEventListener("click", () => {
         console.log("submit1 is ", submit1)
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack1();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         let result = []
         for (let i = 0; i < randomNumbers.length; i++) {
@@ -930,10 +1013,10 @@ submit1.addEventListener("click", () => {
         totalScore.innerHTML = score;
     }
     upperBonus();
+    upperTotals();
     if (submitCount == 13) {
         finishGame();
     }
-    upperTotals()
 });
 
 submit2.addEventListener("click", () => {
@@ -949,7 +1032,7 @@ submit2.addEventListener("click", () => {
         submit2 = true;
         roll.style.display = "block";
         hideTickBox()
-
+        changeBack2();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         let result = []
         for (let i = 0; i < randomNumbers.length; i++) {
@@ -969,10 +1052,10 @@ submit2.addEventListener("click", () => {
         totalScore.innerHTML = score;
     }
     upperBonus();
+    upperTotals();
     if (submitCount == 13) {
         finishGame();
     }
-    upperTotals()
 });
 submit3.addEventListener("click", () => {
     pressRoll.style.display = "block";
@@ -987,7 +1070,7 @@ submit3.addEventListener("click", () => {
         submit3 = true;
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack3();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         let result = []
         for (let i = 0; i < randomNumbers.length; i++) {
@@ -1008,10 +1091,10 @@ submit3.addEventListener("click", () => {
 
     }
     upperBonus();
+    upperTotals();
     if (submitCount == 13) {
         finishGame();
     }
-    upperTotals()
 });
 submit4.addEventListener("click", () => {
     pressRoll.style.display = "block";
@@ -1026,7 +1109,7 @@ submit4.addEventListener("click", () => {
         submit4 = true;
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack4();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         let result = []
         for (let i = 0; i < randomNumbers.length; i++) {
@@ -1046,10 +1129,10 @@ submit4.addEventListener("click", () => {
         totalScore.innerHTML = score;
     }
     upperBonus();
+    upperTotals();
     if (submitCount == 13) {
         finishGame();
     }
-    upperTotals()
 });
 submit5.addEventListener("click", () => {
     pressRoll.style.display = "block";
@@ -1064,7 +1147,7 @@ submit5.addEventListener("click", () => {
         submit5 = true;
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack5();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         let result = []
         for (let i = 0; i < randomNumbers.length; i++) {
@@ -1084,10 +1167,10 @@ submit5.addEventListener("click", () => {
         totalScore.innerHTML = score;
     }
     upperBonus();
+    upperTotals();
     if (submitCount == 13) {
         finishGame();
     }
-    upperTotals()
 });
 submit6.addEventListener("click", () => {
     pressRoll.style.display = "block";
@@ -1102,7 +1185,7 @@ submit6.addEventListener("click", () => {
         submit6 = true;
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack6();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         let result = []
         for (let i = 0; i < randomNumbers.length; i++) {
@@ -1122,10 +1205,10 @@ submit6.addEventListener("click", () => {
         totalScore.innerHTML = score;
     }
     upperBonus();
+    upperTotals();
     if (submitCount == 13) {
         finishGame();
     }
-    upperTotals()
 });
 submit7.addEventListener("click", () => {
     pressRoll.style.display = "block";
@@ -1140,7 +1223,7 @@ submit7.addEventListener("click", () => {
         submit7 = true;
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack8();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         sum7 = randomNumber1 + randomNumber2 + randomNumber3 + randomNumber4 + randomNumber5
         console.log(randomNumbers)
@@ -1192,7 +1275,7 @@ submit8.addEventListener("click", () => {
         submit8 = true;
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack9();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
         sum8 = randomNumber1 + randomNumber2 + randomNumber3 + randomNumber4 + randomNumber5;
         console.log(randomNumbers)
@@ -1242,7 +1325,7 @@ submit9.addEventListener("click", () => {
         submit9 = true;
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack10();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
         console.log(randomNumbers)
 
@@ -1287,7 +1370,7 @@ submit10.addEventListener("click", () => {
         submit10 = true;
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack11();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
         const checkSmallStraight1 = [1, 2, 3, 4];
         const checkSmallStraight2 = [2, 3, 4, 5];
@@ -1335,7 +1418,7 @@ submit11.addEventListener("click", () => {
         submit11 = true;
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack12();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
         const checkLargeStraight1 = [1, 2, 3, 4, 5];
         const checkLargeStraight2 = [2, 3, 4, 5, 6];
@@ -1377,7 +1460,7 @@ submit12.addEventListener("click", () => {
         console.log("yahtzee submit is ", submit12)
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack13();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
     }
     if (randomNumber1 == randomNumber2 && randomNumber1 == randomNumber3 && randomNumber1 == randomNumber4 && randomNumber1 == randomNumber5) {
@@ -1413,18 +1496,19 @@ submit13.addEventListener("click", () => {
         submit13 = true;
         hideTickBox()
         roll.style.display = "block";
-
+        changeBack14();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         sum13 = randomNumber1 + randomNumber2 + randomNumber3 + randomNumber4 + randomNumber5
     }
-    if (submitCount == 13) {
-        finishGame();
-    }
+
     score13.innerHTML = sum13;
     scoreLower += sum13;
     totalLower.innerHTML = scoreLower;
     grandTotal.innerHTML = totalUp + scoreLower;
     rolls = 0;
+    if (submitCount == 13) {
+        finishGame();
+    }
 });
 submit14.addEventListener("click", () => {
     submit14 = true;
@@ -1442,6 +1526,7 @@ submit14.addEventListener("click", () => {
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
             console.log("lower score is ", scoreLower)
+            changeBack15();
         }
     } else {
         score14.innerHTML = yahtzeeBonusScore;
@@ -1470,6 +1555,7 @@ submit15.addEventListener("click", () => {
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
             console.log("lower score is ", scoreLower)
+            changeBack15();
         }
     } else {
         score14.innerHTML = yahtzeeBonusScore;
@@ -1498,6 +1584,7 @@ submit16.addEventListener("click", () => {
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
             console.log("lower score is ", scoreLower)
+            changeBack15();
         }
     } else {
         score14.innerHTML = yahtzeeBonusScore;
