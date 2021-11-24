@@ -1,6 +1,4 @@
 const roll = document.getElementById("roll");
-// const restart = document.getElementById("restart");
-// const rules = document.getElementById("rules");
 const dice1 = document.getElementById("dice1");
 const dice2 = document.getElementById("dice2");
 const dice3 = document.getElementById("dice3");
@@ -110,6 +108,58 @@ function reload() {
 }
 newGame.addEventListener("click", reload, false);
 
+function resetHold() {
+    hold1 = false;
+    hold1Text = "Hold";
+    changeText1("Hold");
+    changeColour2();
+    hold2 = false;
+    hold2Text = "Hold";
+    changeText2("Hold");
+    changeColour4();
+    hold3 = false;
+    hold3Text = "Hold";
+    changeText3("Hold");
+    changeColour6();
+    hold4 = false;
+    hold4Text = "Hold";
+    changeText4("Hold");
+    changeColour8();
+    hold5 = false;
+    hold5Text = "Hold";
+    changeText5("Hold");
+    changeColour10();
+    hold.style.display = "none";
+}
+function finishGame() {
+    submitScore.style.display = "none";
+    roll.style.display = "none";
+    hold.style.display = "none";
+    gameOver.style.display = "block";
+    newGame.style.display = "block";
+    n.style.display = "none";
+    o.style.display = "none";
+    p.style.display = "none";
+    console.log("game over")
+}
+function hideTickBox() {
+    a.style.display = "none";
+    b.style.display = "none";
+    c.style.display = "none";
+    d.style.display = "none";
+    e.style.display = "none";
+    f.style.display = "none";
+    g.style.display = "none";
+    h.style.display = "none";
+    i.style.display = "none";
+    j.style.display = "none";
+    k.style.display = "none";
+    l.style.display = "none";
+    m.style.display = "none";
+    n.style.display = "none";
+    o.style.display = "none";
+    p.style.display = "none";
+}
 function hideDice() {
     dice1.style.display = "none";
     dice2.style.display = "none";
@@ -181,6 +231,327 @@ function hideBlackDice() {
     dice4_5black.style.display = "none";
     dice5_5black.style.display = "none";
     dice6_5black.style.display = "none";
+}
+function blackDice1() {
+    if (randomNumber1 == 1) {
+        dice1.style.display = "none";
+        dice1black.style.display = "block";
+    }
+    if (randomNumber1 == 2) {
+        dice2.style.display = "none";
+        dice2black.style.display = "block";
+    }
+    if (randomNumber1 == 3) {
+        dice3.style.display = "none";
+        dice3black.style.display = "block"
+    }
+    if (randomNumber1 == 4) {
+        dice4.style.display = "none";
+        dice4black.style.display = "block";
+    }
+    if (randomNumber1 == 5) {
+        dice5.style.display = "none";
+        dice5black.style.display = "block";
+    }
+    if (randomNumber1 == 6) {
+        dice6.style.display = "none";
+        dice6black.style.display = "block";
+    }
+}
+function blackDice2() {
+    if (randomNumber2 == 1) {
+        dice1_2.style.display = "none"
+        dice1_2black.style.display = "block";
+    }
+    if (randomNumber2 == 2) {
+        dice2_2.style.display = "none";
+        dice2_2black.style.display = "block";
+    }
+    if (randomNumber2 == 3) {
+        dice3_2.style.display = "none";
+        dice3_2black.style.display = "block";
+    }
+    if (randomNumber2 == 4) {
+        dice4_2.style.display = "none";
+        dice4_2black.style.display = "block";
+    }
+    if (randomNumber2 == 5) {
+        dice5_2.style.display = "none";
+        dice5_2black.style.display = "block";
+    }
+    if (randomNumber2 == 6) {
+        dice6_2.style.display = "none";
+        dice6_2black.style.display = "block";
+    }
+}
+function blackDice3() {
+    if (randomNumber3 == 1) {
+        dice1_3.style.display = "none";
+        dice1_3black.style.display = "block";
+    }
+    if (randomNumber3 == 2) {
+        dice2_3.style.display = "none";
+        dice2_3black.style.display = "block";
+    }
+    if (randomNumber3 == 3) {
+        dice3_3.style.display = "none";
+        dice3_3black.style.display = "block";
+    }
+    if (randomNumber3 == 4) {
+        dice4_3.style.display = "none";
+        dice4_3black.style.display = "block";
+    }
+    if (randomNumber3 == 5) {
+        dice5_3.style.display = "none";
+        dice5_3black.style.display = "block";
+    }
+    if (randomNumber3 == 6) {
+        dice6_3.style.display = "none";
+        dice6_3black.style.display = "block";
+    }
+}
+function blackDice4() {
+    if (randomNumber4 == 1) {
+        dice1_4.style.display = "none";
+        dice1_4black.style.display = "block";
+    }
+    if (randomNumber4 == 2) {
+        dice2_4.style.display = "none";
+        dice2_4black.style.display = "block";
+    }
+    if (randomNumber4 == 3) {
+        dice3_4.style.display = "none";
+        dice3_4black.style.display = "block";
+    }
+    if (randomNumber4 == 4) {
+        dice4_4.style.display = "none";
+        dice4_4black.style.display = "block";
+    }
+    if (randomNumber4 == 5) {
+        dice5_4.style.display = "none";
+        dice5_4black.style.display = "block";
+    }
+    if (randomNumber4 == 6) {
+        dice6_4.style.display = "none";
+        dice6_4black.style.display = "block";
+    }
+}
+function blackDice5() {
+    if (randomNumber5 == 1) {
+        dice1_5.style.display = "none";
+        dice1_5black.style.display = "block";
+    }
+    if (randomNumber5 == 2) {
+        dice2_5.style.display = "none";
+        dice2_5black.style.display = "block";
+    }
+    if (randomNumber5 == 3) {
+        dice3_5.style.display = "none";
+        dice3_5black.style.display = "block";
+    }
+    if (randomNumber5 == 4) {
+        dice4_5.style.display = "none";
+        dice4_5black.style.display = "block";
+    }
+    if (randomNumber5 == 5) {
+        dice5_5.style.display = "none";
+        dice5_5black.style.display = "block";
+    }
+    if (randomNumber5 == 6) {
+        dice6_5.style.display = "none";
+        dice6_5black.style.display = "block";
+    }
+}
+function greyDice1() {
+    if (randomNumber1 == 1) {
+        dice1.style.display = "block";
+        dice1black.style.display = "none";
+    }
+    if (randomNumber1 == 2) {
+        dice2.style.display = "block";
+        dice2black.style.display = "none";
+    }
+    if (randomNumber1 == 3) {
+        dice3.style.display = "block";
+        dice3black.style.display = "none"
+    }
+    if (randomNumber1 == 4) {
+        dice4.style.display = "block";
+        dice4black.style.display = "none";
+    }
+    if (randomNumber1 == 5) {
+        dice5.style.display = "block";
+        dice5black.style.display = "none";
+    }
+    if (randomNumber1 == 6) {
+        dice6.style.display = "block";
+        dice6black.style.display = "none";
+    }
+}
+function greyDice2() {
+    if (randomNumber2 == 1) {
+        dice1_2.style.display = "block";
+        dice1_2black.style.display = "none";
+    }
+    if (randomNumber2 == 2) {
+        dice2_2.style.display = "block";
+        dice2_2black.style.display = "none";
+    }
+    if (randomNumber2 == 3) {
+        dice3_2.style.display = "block";
+        dice3_2black.style.display = "none"
+    }
+    if (randomNumber2 == 4) {
+        dice4_2.style.display = "block";
+        dice4_2black.style.display = "none";
+    }
+    if (randomNumber2 == 5) {
+        dice5_2.style.display = "block";
+        dice5_2black.style.display = "none";
+    }
+    if (randomNumber2 == 6) {
+        dice6_2.style.display = "block";
+        dice6_2black.style.display = "none";
+    }
+}
+function greyDice3() {
+    if (randomNumber3 == 1) {
+        dice1_3.style.display = "block";
+        dice1_3black.style.display = "none";
+    }
+    if (randomNumber3 == 2) {
+        dice2_3.style.display = "block";
+        dice2_3black.style.display = "none";
+    }
+    if (randomNumber3 == 3) {
+        dice3_3.style.display = "block";
+        dice3_3black.style.display = "none"
+    }
+    if (randomNumber3 == 4) {
+        dice4_3.style.display = "block";
+        dice4_3black.style.display = "none";
+    }
+    if (randomNumber3 == 5) {
+        dice5_3.style.display = "block";
+        dice5_3black.style.display = "none";
+    }
+    if (randomNumber3 == 6) {
+        dice6_3.style.display = "block";
+        dice6_3black.style.display = "none";
+    }
+}
+function greyDice4() {
+    if (randomNumber4 == 1) {
+        dice1_4.style.display = "block";
+        dice1_4black.style.display = "none";
+    }
+    if (randomNumber4 == 2) {
+        dice2_4.style.display = "block";
+        dice2_4black.style.display = "none";
+    }
+    if (randomNumber4 == 3) {
+        dice3_4.style.display = "block";
+        dice3_4black.style.display = "none"
+    }
+    if (randomNumber4 == 4) {
+        dice4_4.style.display = "block";
+        dice4_4black.style.display = "none";
+    }
+    if (randomNumber4 == 5) {
+        dice5_4.style.display = "block";
+        dice5_4black.style.display = "none";
+    }
+    if (randomNumber4 == 6) {
+        dice6_4.style.display = "block";
+        dice6_4black.style.display = "none";
+    }
+}
+function greyDice5() {
+    if (randomNumber5 == 1) {
+        dice1_5.style.display = "block";
+        dice1_5black.style.display = "none";
+    }
+    if (randomNumber5 == 2) {
+        dice2_5.style.display = "block";
+        dice2_5black.style.display = "none";
+    }
+    if (randomNumber5 == 3) {
+        dice3_5.style.display = "block";
+        dice3_5black.style.display = "none"
+    }
+    if (randomNumber5 == 4) {
+        dice4_5.style.display = "block";
+        dice4_5black.style.display = "none";
+    }
+    if (randomNumber5 == 5) {
+        dice5_5.style.display = "block";
+        dice5_5black.style.display = "none";
+    }
+    if (randomNumber5 == 6) {
+        dice6_5.style.display = "block";
+        dice6_5black.style.display = "none";
+    }
+}
+function upperBonus() {
+    if (score >= 63) {
+        bonusUp = 35;
+        bonus.innerHTML = bonusUp;
+    } else {
+        bonusUp = 0;
+        bonus.innerHTML = bonusUp;
+    }
+};
+function upperTotals() {
+    totalUp = score + bonusUp;
+    console.log("upper total is ", totalUp)
+    totalUpper.innerHTML = totalUp;
+    totalUpper2.innerHTML = totalUp;
+    grandTotal.innerHTML = totalUp + scoreLower;
+};
+function changeText1() {
+    document.getElementById("hold1").innerHTML = hold1Text;
+};
+function changeText2() {
+    document.getElementById("hold2").innerHTML = hold2Text;
+}
+function changeText3() {
+    document.getElementById("hold3").innerHTML = hold3Text;
+}
+function changeText4() {
+    document.getElementById("hold4").innerHTML = hold4Text;
+}
+function changeText5() {
+    document.getElementById("hold5").innerHTML = hold5Text;
+}
+function changeColour1() {
+    document.getElementById("hold1").style.backgroundColor = "darkslategrey"
+}
+function changeColour2() {
+    document.getElementById("hold1").style.backgroundColor = "lightslategrey"
+}
+function changeColour3() {
+    document.getElementById("hold2").style.backgroundColor = "darkslategrey"
+}
+function changeColour4() {
+    document.getElementById("hold2").style.backgroundColor = "lightslategrey"
+}
+function changeColour5() {
+    document.getElementById("hold3").style.backgroundColor = "darkslategrey"
+}
+function changeColour6() {
+    document.getElementById("hold3").style.backgroundColor = "lightslategrey"
+}
+function changeColour7() {
+    document.getElementById("hold4").style.backgroundColor = "darkslategrey"
+}
+function changeColour8() {
+    document.getElementById("hold4").style.backgroundColor = "lightslategrey"
+}
+function changeColour9() {
+    document.getElementById("hold5").style.backgroundColor = "darkslategrey"
+}
+function changeColour10() {
+    document.getElementById("hold5").style.backgroundColor = "lightslategrey"
 }
 ones.addEventListener("click", () => {
     if (ones != true) {
@@ -343,27 +714,6 @@ y3.addEventListener("click", () => {
     }
     console.log("y3 ", y3)
 });
-function changeText1() {
-    document.getElementById("hold1").innerHTML = hold1Text;
-};
-function changeText2() {
-    document.getElementById("hold2").innerHTML = hold2Text;
-}
-function changeText3() {
-    document.getElementById("hold3").innerHTML = hold3Text;
-}
-function changeText4() {
-    document.getElementById("hold4").innerHTML = hold4Text;
-}
-function changeText5() {
-    document.getElementById("hold5").innerHTML = hold5Text;
-}
-function changeColour1() {
-    document.getElementById("hold1").style.backgroundColor = "darkslategrey"
-}
-function changeColour2() {
-    document.getElementById("hold1").style.backgroundColor = "lightslategrey"
-}
 
 hold1.addEventListener("click", () => {
     if (hold1 != true) {
@@ -371,334 +721,86 @@ hold1.addEventListener("click", () => {
         hold1Text = "Held";
         changeText1("Held");
         changeColour1();
-        if (randomNumber1 == 1) {
-            dice1.style.display = "none";
-            dice1black.style.display = "block";
-        }
-        if (randomNumber1 == 2) {
-            dice2.style.display = "none";
-            dice2black.style.display = "block";
-        }
-        if (randomNumber1 == 3) {
-            dice3.style.display = "none";
-            dice3black.style.display = "block"
-        }
-        if (randomNumber1 == 4) {
-            dice4.style.display = "none";
-            dice4black.style.display = "block";
-        }
-        if (randomNumber1 == 5) {
-            dice5.style.display = "none";
-            dice5black.style.display = "block";
-        }
-        if (randomNumber1 == 6) {
-            dice6.style.display = "none";
-            dice6black.style.display = "block";
-        }
+        blackDice1();
     } else if (hold1 != false) {
         hold1 = false;
         hold1Text = "Hold";
         changeText1("Hold");
-        changeColour2()
-        if (randomNumber1 == 1) {
-            dice1.style.display = "block";
-            dice1black.style.display = "none";
-        }
-        if (randomNumber1 == 2) {
-            dice2.style.display = "block";
-            dice2black.style.display = "none";
-        }
-        if (randomNumber1 == 3) {
-            dice3.style.display = "block";
-            dice3black.style.display = "none"
-        }
-        if (randomNumber1 == 4) {
-            dice4.style.display = "block";
-            dice4black.style.display = "none";
-        }
-        if (randomNumber1 == 5) {
-            dice5.style.display = "block";
-            dice5black.style.display = "none";
-        }
-        if (randomNumber1 == 6) {
-            dice6.style.display = "block";
-            dice6black.style.display = "none";
-        }
+        changeColour2();
+        greyDice1();
     }
     console.log("hold1 is ", hold1)
 });
-function changeColour3() {
-    document.getElementById("hold2").style.backgroundColor = "darkslategrey"
-}
-function changeColour4() {
-    document.getElementById("hold2").style.backgroundColor = "lightslategrey"
-}
+
 hold2.addEventListener("click", () => {
     if (hold2 != true) {
         hold2 = true;
         hold2Text = "Held";
         changeText2("Held");
         changeColour3();
-        if (randomNumber2 == 1) {
-            dice1_2.style.display = "none"
-            dice1_2black.style.display = "block";
-        }
-        if (randomNumber2 == 2) {
-            dice2_2.style.display = "none";
-            dice2_2black.style.display = "block";
-        }
-        if (randomNumber2 == 3) {
-            dice3_2.style.display = "none";
-            dice3_2black.style.display = "block";
-        }
-        if (randomNumber2 == 4) {
-            dice4_2.style.display = "none";
-            dice4_2black.style.display = "block";
-        }
-        if (randomNumber2 == 5) {
-            dice5_2.style.display = "none";
-            dice5_2black.style.display = "block";
-        }
-        if (randomNumber2 == 6) {
-            dice6_2.style.display = "none";
-            dice6_2black.style.display = "block";
-        }
+        blackDice2()
+
     } else {
         hold2 = false;
         hold2Text = "Hold";
         changeText2("Hold");
         changeColour4();
-        if (randomNumber2 == 1) {
-            dice1_2.style.display = "block";
-            dice1_2black.style.display = "none";
-        }
-        if (randomNumber2 == 2) {
-            dice2_2.style.display = "block";
-            dice2_2black.style.display = "none";
-        }
-        if (randomNumber2 == 3) {
-            dice3_2.style.display = "block";
-            dice3_2black.style.display = "none"
-        }
-        if (randomNumber2 == 4) {
-            dice4_2.style.display = "block";
-            dice4_2black.style.display = "none";
-        }
-        if (randomNumber2 == 5) {
-            dice5_2.style.display = "block";
-            dice5_2black.style.display = "none";
-        }
-        if (randomNumber2 == 6) {
-            dice6_2.style.display = "block";
-            dice6_2black.style.display = "none";
-        }
+        greyDice2();
     }
     console.log("hold2 is ", hold2)
 });
-function changeColour5() {
-    document.getElementById("hold3").style.backgroundColor = "darkslategrey"
-}
-function changeColour6() {
-    document.getElementById("hold3").style.backgroundColor = "lightslategrey"
-}
+
 hold3.addEventListener("click", () => {
     if (hold3 != true) {
         hold3 = true;
         hold3Text = "Held";
         changeText3("Held");
         changeColour5();
-        if (randomNumber3 == 1) {
-            dice1_3.style.display = "none";
-            dice1_3black.style.display = "block";
-        }
-        if (randomNumber3 == 2) {
-            dice2_3.style.display = "none";
-            dice2_3black.style.display = "block";
-        }
-        if (randomNumber3 == 3) {
-            dice3_3.style.display = "none";
-            dice3_3black.style.display = "block";
-        }
-        if (randomNumber3 == 4) {
-            dice4_3.style.display = "none";
-            dice4_3black.style.display = "block";
-        }
-        if (randomNumber3 == 5) {
-            dice5_3.style.display = "none";
-            dice5_3black.style.display = "block";
-        }
-        if (randomNumber3 == 6) {
-            dice6_3.style.display = "none";
-            dice6_3black.style.display = "block";
-        }
+        blackDice3()
     } else {
         hold3 = false;
         hold3Text = "Hold";
         changeText3("Hold");
         changeColour6();
-        if (randomNumber3 == 1) {
-            dice1_3.style.display = "block";
-            dice1_3black.style.display = "none";
-        }
-        if (randomNumber3 == 2) {
-            dice2_3.style.display = "block";
-            dice2_3black.style.display = "none";
-        }
-        if (randomNumber3 == 3) {
-            dice3_3.style.display = "block";
-            dice3_3black.style.display = "none"
-        }
-        if (randomNumber3 == 4) {
-            dice4_3.style.display = "block";
-            dice4_3black.style.display = "none";
-        }
-        if (randomNumber3 == 5) {
-            dice5_3.style.display = "block";
-            dice5_3black.style.display = "none";
-        }
-        if (randomNumber3 == 6) {
-            dice6_3.style.display = "block";
-            dice6_3black.style.display = "none";
-        }
+        greyDice3();
     }
     console.log("hold3 is ", hold3)
 });
-function changeColour7() {
-    document.getElementById("hold4").style.backgroundColor = "darkslategrey"
-}
-function changeColour8() {
-    document.getElementById("hold4").style.backgroundColor = "lightslategrey"
-}
+
 hold4.addEventListener("click", () => {
     if (hold4 != true) {
         hold4 = true;
         hold4Text = "Held";
         changeText4("Held");
         changeColour7();
-        if (randomNumber4 == 1) {
-            dice1_4.style.display = "none";
-            dice1_4black.style.display = "block";
-        }
-        if (randomNumber4 == 2) {
-            dice2_4.style.display = "none";
-            dice2_4black.style.display = "block";
-        }
-        if (randomNumber4 == 3) {
-            dice3_4.style.display = "none";
-            dice3_4black.style.display = "block";
-        }
-        if (randomNumber4 == 4) {
-            dice4_4.style.display = "none";
-            dice4_4black.style.display = "block";
-        }
-        if (randomNumber4 == 5) {
-            dice5_4.style.display = "none";
-            dice5_4black.style.display = "block";
-        }
-        if (randomNumber4 == 6) {
-            dice6_4.style.display = "none";
-            dice6_4black.style.display = "block";
-        }
+        blackDice4()
     } else {
         hold4 = false;
         hold4Text = "Hold";
         changeText4("Hold");
         changeColour8();
-        if (randomNumber4 == 1) {
-            dice1_4.style.display = "block";
-            dice1_4black.style.display = "none";
-        }
-        if (randomNumber4 == 2) {
-            dice2_4.style.display = "block";
-            dice2_4black.style.display = "none";
-        }
-        if (randomNumber4 == 3) {
-            dice3_4.style.display = "block";
-            dice3_4black.style.display = "none"
-        }
-        if (randomNumber4 == 4) {
-            dice4_4.style.display = "block";
-            dice4_4black.style.display = "none";
-        }
-        if (randomNumber4 == 5) {
-            dice5_4.style.display = "block";
-            dice5_4black.style.display = "none";
-        }
-        if (randomNumber4 == 6) {
-            dice6_4.style.display = "block";
-            dice6_4black.style.display = "none";
-        }
+        greyDice4();
     }
     console.log("hold4 is ", hold4)
 });
-function changeColour9() {
-    document.getElementById("hold5").style.backgroundColor = "darkslategrey"
-}
-function changeColour10() {
-    document.getElementById("hold5").style.backgroundColor = "lightslategrey"
-}
+
 hold5.addEventListener("click", () => {
     if (hold5 != true) {
         hold5 = true;
         hold5Text = "Held";
         changeText5("Held");
         changeColour9();
-        if (randomNumber5 == 1) {
-            dice1_5.style.display = "none";
-            dice1_5black.style.display = "block";
-        }
-        if (randomNumber5 == 2) {
-            dice2_5.style.display = "none";
-            dice2_5black.style.display = "block";
-        }
-        if (randomNumber5 == 3) {
-            dice3_5.style.display = "none";
-            dice3_5black.style.display = "block";
-        }
-        if (randomNumber5 == 4) {
-            dice4_5.style.display = "none";
-            dice4_5black.style.display = "block";
-        }
-        if (randomNumber5 == 5) {
-            dice5_5.style.display = "none";
-            dice5_5black.style.display = "block";
-        }
-        if (randomNumber5 == 6) {
-            dice6_5.style.display = "none";
-            dice6_5black.style.display = "block";
-        }
+        blackDice5()
     } else {
         hold5 = false;
         hold5Text = "Hold";
         changeText5("Hold");
         changeColour10();
-        if (randomNumber5 == 1) {
-            dice1_5.style.display = "block";
-            dice1_5black.style.display = "none";
-        }
-        if (randomNumber5 == 2) {
-            dice2_5.style.display = "block";
-            dice2_5black.style.display = "none";
-        }
-        if (randomNumber5 == 3) {
-            dice3_5.style.display = "block";
-            dice3_5black.style.display = "none"
-        }
-        if (randomNumber5 == 4) {
-            dice4_5.style.display = "block";
-            dice4_5black.style.display = "none";
-        }
-        if (randomNumber5 == 5) {
-            dice5_5.style.display = "block";
-            dice5_5black.style.display = "none";
-        }
-        if (randomNumber5 == 6) {
-            dice6_5.style.display = "block";
-            dice6_5black.style.display = "none";
-        }
+        greyDice5();
     }
     console.log("hold5 is ", hold5)
 });
+
 roll.addEventListener("click", () => {
     yahtzeeBonus.style.display = "none";
     pressRoll.style.display = "none";
@@ -753,194 +855,28 @@ roll.addEventListener("click", () => {
     }
 
     hold.style.display = "block";
-
-    dice1.style.display = "none";
-    dice2.style.display = "none";
-    dice3.style.display = "none";
-    dice4.style.display = "none";
-    dice5.style.display = "none";
-    dice6.style.display = "none";
-
-    dice1_2.style.display = "none";
-    dice2_2.style.display = "none";
-    dice3_2.style.display = "none";
-    dice4_2.style.display = "none";
-    dice5_2.style.display = "none";
-    dice6_2.style.display = "none";
-
-    dice1_3.style.display = "none";
-    dice2_3.style.display = "none";
-    dice3_3.style.display = "none";
-    dice4_3.style.display = "none";
-    dice5_3.style.display = "none";
-    dice6_3.style.display = "none";
-
-    dice1_4.style.display = "none";
-    dice2_4.style.display = "none";
-    dice3_4.style.display = "none";
-    dice4_4.style.display = "none";
-    dice5_4.style.display = "none";
-    dice6_4.style.display = "none";
-
-    dice1_5.style.display = "none";
-    dice2_5.style.display = "none";
-    dice3_5.style.display = "none";
-    dice4_5.style.display = "none";
-    dice5_5.style.display = "none";
-    dice6_5.style.display = "none";
+    hideDice();
 
     if (hold1 != true) {
         randomNumber1 = Math.floor(Math.random() * 6) + 1;
-        if (randomNumber1 == 1) {
-            dice1.style.display = "block";
-        }
-        if (randomNumber1 == 2) {
-            dice2.style.display = "block";
-        }
-        if (randomNumber1 == 3) {
-            dice3.style.display = "block";
-        }
-        if (randomNumber1 == 4) {
-            dice4.style.display = "block";
-        }
-        if (randomNumber1 == 5) {
-            dice5.style.display = "block";
-        }
-        if (randomNumber1 == 6) {
-            dice6.style.display = "block";
-        }
-    } else {
-        if (randomNumber1 == 1) {
-            dice1.style.display = "none";
-            dice1black.style.display = "block";
-        }
-        if (randomNumber1 == 2) {
-            dice2.style.display = "none";
-            dice2black.style.display = "block";
-        }
-        if (randomNumber1 == 3) {
-            dice3.style.display = "none";
-            dice3black.style.display = "block";
-        }
-        if (randomNumber1 == 4) {
-            dice4.style.display = "none";
-            dice4black.style.display = "block";
-        }
-        if (randomNumber1 == 5) {
-            dice5.style.display = "none";
-            dice5black.style.display = "block";
-        }
-        if (randomNumber1 == 6) {
-            dice6.style.display = "none";
-            dice6black.style.display = "block";
-        }
+        greyDice1();
     }
     if (hold2 != true) {
         randomNumber2 = Math.floor(Math.random() * 6) + 1;
-        if (randomNumber2 == 1) {
-            dice1_2.style.display = "block";
-
-        }
-        if (randomNumber2 == 2) {
-            dice2_2.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber2 == 3) {
-            dice3_2.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber2 == 4) {
-            dice4_2.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber2 == 5) {
-            dice5_2.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber2 == 6) {
-            dice6_2.style.display = "block";
-            pressRoll.style.display = "none";
-        }
+        greyDice2();
     }
     if (hold3 != true) {
         randomNumber3 = Math.floor(Math.random() * 6) + 1;
-        if (randomNumber3 == 1) {
-            dice1_3.style.display = "block";
-        }
-        if (randomNumber3 == 2) {
-            dice2_3.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber3 == 3) {
-            dice3_3.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber3 == 4) {
-            dice4_3.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber3 == 5) {
-            dice5_3.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber3 == 6) {
-            dice6_3.style.display = "block";
-            pressRoll.style.display = "none";
-        }
+        greyDice3();
     }
     if (hold4 != true) {
         randomNumber4 = Math.floor(Math.random() * 6) + 1;
-        if (randomNumber4 == 1) {
-            dice1_4.style.display = "block";
-        }
-        if (randomNumber4 == 2) {
-            dice2_4.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber4 == 3) {
-            dice3_4.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber4 == 4) {
-            dice4_4.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber4 == 5) {
-            dice5_4.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber4 == 6) {
-            dice6_4.style.display = "block";
-            pressRoll.style.display = "none";
-        }
+        greyDice4();
     }
     if (hold5 != true) {
         randomNumber5 = Math.floor(Math.random() * 6) + 1;
-        if (randomNumber5 == 1) {
-            dice1_5.style.display = "block";
-        }
-        if (randomNumber5 == 2) {
-            dice2_5.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber5 == 3) {
-            dice3_5.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber5 == 4) {
-            dice4_5.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber5 == 5) {
-            dice5_5.style.display = "block";
-            pressRoll.style.display = "none";
-        }
-        if (randomNumber5 == 6) {
-            dice6_5.style.display = "block";
-            pressRoll.style.display = "none";
-        }
+        greyDice5();
     }
-
 
     let randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
     console.log(randomNumbers)
@@ -950,23 +886,13 @@ roll.addEventListener("click", () => {
     if (rolls == 3) {
         submitScore.style.display = "block"
         hold.style.display = "block";
-        hold1 = false;
-        hold1Text = "Hold";
-        changeText1("Hold");
-        hold2 = false;
-        hold2Text = "Hold";
-        changeText2("Hold");
-        hold3 = false;
-        hold3Text = "Hold";
-        changeText3("Hold");
-        hold4 = false;
-        hold4Text = "Hold";
-        changeText4("Hold");
-        hold5 = false;
-        hold5Text = "Hold";
-        changeText5("Hold");
         roll.style.display = "none";
-        hold.style.display = "none";
+        resetHold();
+        blackDice1();
+        blackDice2();
+        blackDice3();
+        blackDice4();
+        blackDice5();
     }
 });
 submit1.addEventListener("click", () => {
@@ -977,47 +903,12 @@ submit1.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
 
     if (submit1 != false) {
         submit1 = true;
         console.log("submit1 is ", submit1)
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
@@ -1038,29 +929,11 @@ submit1.addEventListener("click", () => {
         console.log("your total score is ", score)
         totalScore.innerHTML = score;
     }
-    if (score >= 63) {
-        bonusUp = 35;
-        bonus.innerHTML = bonusUp;
-    } else {
-        bonusUp = 0;
-        bonus.innerHTML = bonusUp;
-    }
+    upperBonus();
     if (submitCount == 13) {
-        submitScore.style.display = "none";
-        roll.style.display = "none";
-        hold.style.display = "none";
-        gameOver.style.display = "block";
-        newGame.style.display = "block";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
-        console.log("game over")
+        finishGame();
     }
-    totalUp = score + bonusUp;
-    console.log("upper total is ", totalUp)
-    totalUpper.innerHTML = totalUp;
-    totalUpper2.innerHTML = totalUp;
-    grandTotal.innerHTML = totalUp + scoreLower;
+    upperTotals()
 });
 
 submit2.addEventListener("click", () => {
@@ -1071,46 +944,11 @@ submit2.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit2 != false) {
         submit2 = true;
         roll.style.display = "block";
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         let result = []
@@ -1130,29 +968,11 @@ submit2.addEventListener("click", () => {
         console.log("your total score is ", score)
         totalScore.innerHTML = score;
     }
-    if (score >= 63) {
-        bonusUp = 35;
-        bonus.innerHTML = bonusUp;
-    } else {
-        bonusUp = 0;
-        bonus.innerHTML = bonusUp;
-    }
+    upperBonus();
     if (submitCount == 13) {
-        submitScore.style.display = "none";
-        roll.style.display = "none";
-        hold.style.display = "none";
-        gameOver.style.display = "block";
-        newGame.style.display = "block";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
-        console.log("game over")
+        finishGame();
     }
-    totalUp = score + bonusUp;
-    console.log("upper total is ", totalUp)
-    totalUpper.innerHTML = totalUp;
-    totalUpper2.innerHTML = totalUp;
-    grandTotal.innerHTML = totalUp + scoreLower;
+    upperTotals()
 });
 submit3.addEventListener("click", () => {
     pressRoll.style.display = "block";
@@ -1162,45 +982,10 @@ submit3.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit3 != false) {
         submit3 = true;
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
@@ -1222,29 +1007,11 @@ submit3.addEventListener("click", () => {
         totalScore.innerHTML = score;
 
     }
-    if (score >= 63) {
-        bonusUp = 35;
-        bonus.innerHTML = bonusUp;
-    } else {
-        bonusUp = 0;
-        bonus.innerHTML = bonusUp;
-    }
+    upperBonus();
     if (submitCount == 13) {
-        submitScore.style.display = "none";
-        roll.style.display = "none";
-        hold.style.display = "none";
-        gameOver.style.display = "block";
-        newGame.style.display = "block";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
-        console.log("game over")
+        finishGame();
     }
-    totalUp = score + bonusUp;
-    console.log("upper total is ", totalUp)
-    totalUpper.innerHTML = totalUp;
-    totalUpper2.innerHTML = totalUp;
-    grandTotal.innerHTML = totalUp + scoreLower;
+    upperTotals()
 });
 submit4.addEventListener("click", () => {
     pressRoll.style.display = "block";
@@ -1254,45 +1021,10 @@ submit4.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit4 != false) {
         submit4 = true;
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
@@ -1313,29 +1045,11 @@ submit4.addEventListener("click", () => {
         console.log("your total score is ", score)
         totalScore.innerHTML = score;
     }
-    if (score >= 63) {
-        bonusUp = 35;
-        bonus.innerHTML = bonusUp;
-    } else {
-        bonusUp = 0;
-        bonus.innerHTML = bonusUp;
-    }
+    upperBonus();
     if (submitCount == 13) {
-        submitScore.style.display = "none";
-        roll.style.display = "none";
-        hold.style.display = "none";
-        gameOver.style.display = "block";
-        newGame.style.display = "block";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
-        console.log("game over")
+        finishGame();
     }
-    totalUp = score + bonusUp;
-    console.log("upper total is ", totalUp)
-    totalUpper.innerHTML = totalUp;
-    totalUpper2.innerHTML = totalUp;
-    grandTotal.innerHTML = totalUp + scoreLower;
+    upperTotals()
 });
 submit5.addEventListener("click", () => {
     pressRoll.style.display = "block";
@@ -1345,45 +1059,10 @@ submit5.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit5 != false) {
         submit5 = true;
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
@@ -1404,29 +1083,11 @@ submit5.addEventListener("click", () => {
         console.log("your total score is ", score)
         totalScore.innerHTML = score;
     }
-    if (score >= 63) {
-        bonusUp = 35;
-        bonus.innerHTML = bonusUp;
-    } else {
-        bonusUp = 0;
-        bonus.innerHTML = bonusUp;
-    }
+    upperBonus();
     if (submitCount == 13) {
-        submitScore.style.display = "none";
-        roll.style.display = "none";
-        hold.style.display = "none";
-        gameOver.style.display = "block";
-        newGame.style.display = "block";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
-        console.log("game over")
+        finishGame();
     }
-    totalUp = score + bonusUp;
-    console.log("upper total is ", totalUp)
-    totalUpper.innerHTML = totalUp;
-    totalUpper2.innerHTML = totalUp;
-    grandTotal.innerHTML = totalUp + scoreLower;
+    upperTotals()
 });
 submit6.addEventListener("click", () => {
     pressRoll.style.display = "block";
@@ -1436,45 +1097,10 @@ submit6.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit6 != false) {
         submit6 = true;
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
@@ -1495,29 +1121,11 @@ submit6.addEventListener("click", () => {
         console.log("your total score is ", score)
         totalScore.innerHTML = score;
     }
-    if (score >= 63) {
-        bonusUp = 35;
-        bonus.innerHTML = bonusUp;
-    } else {
-        bonusUp = 0;
-        bonus.innerHTML = bonusUp;
-    }
+    upperBonus();
     if (submitCount == 13) {
-        submitScore.style.display = "none";
-        roll.style.display = "none";
-        hold.style.display = "none";
-        gameOver.style.display = "block";
-        newGame.style.display = "block";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
-        console.log("game over")
+        finishGame();
     }
-    totalUp = score + bonusUp;
-    console.log("upper total is ", totalUp)
-    totalUpper.innerHTML = totalUp;
-    totalUpper2.innerHTML = totalUp;
-    grandTotal.innerHTML = totalUp + scoreLower;
+    upperTotals()
 });
 submit7.addEventListener("click", () => {
     pressRoll.style.display = "block";
@@ -1527,45 +1135,10 @@ submit7.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit7 != false) {
         submit7 = true;
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
@@ -1581,14 +1154,7 @@ submit7.addEventListener("click", () => {
             } console.log(countOfKind)
             if (countOfKind >= 3) {
                 if (submitCount == 13) {
-                    roll.style.display = "none";
-                    hold.style.display = "none";
-                    gameOver.style.display = "block";
-                    newGame.style.display = "block";
-                    n.style.display = "none";
-                    o.style.display = "none";
-                    p.style.display = "none";
-                    console.log("game over")
+                    finishGame();
                 }
                 console.log("three of a kind")
                 score7.innerHTML = sum7;
@@ -1606,15 +1172,7 @@ submit7.addEventListener("click", () => {
                 grandTotal.innerHTML = totalUp + scoreLower;
                 rolls = 0;
                 if (submitCount == 13) {
-                    submitScore.style.display = "none";
-                    roll.style.display = "none";
-                    hold.style.display = "none";
-                    gameOver.style.display = "block";
-                    newGame.style.display = "block";
-                    n.style.display = "none";
-                    o.style.display = "none";
-                    p.style.display = "none";
-                    console.log("game over")
+                    finishGame();
                 }
             }
         }
@@ -1629,45 +1187,10 @@ submit8.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit8 != false) {
         submit8 = true;
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
@@ -1683,14 +1206,7 @@ submit8.addEventListener("click", () => {
             }
             if (countOfKind >= 4) {
                 if (submitCount == 13) {
-                    roll.style.display = "none";
-                    hold.style.display = "none";
-                    gameOver.style.display = "block";
-                    newGame.style.display = "block";
-                    n.style.display = "none";
-                    o.style.display = "none";
-                    p.style.display = "none";
-                    console.log("game over")
+                    finishGame();
                 }
                 console.log("four of a kind")
                 score8.innerHTML = sum8
@@ -1706,15 +1222,7 @@ submit8.addEventListener("click", () => {
                 grandTotal.innerHTML = totalUp + scoreLower;
                 rolls = 0;
                 if (submitCount == 13) {
-                    submitScore.style.display = "none";
-                    roll.style.display = "none";
-                    hold.style.display = "none";
-                    gameOver.style.display = "block";
-                    newGame.style.display = "block";
-                    n.style.display = "none";
-                    o.style.display = "none";
-                    p.style.display = "none";
-                    console.log("game over")
+                    finishGame();
                 }
             }
         }
@@ -1729,45 +1237,10 @@ submit9.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit9 != false) {
         submit9 = true;
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
@@ -1795,15 +1268,7 @@ submit9.addEventListener("click", () => {
             grandTotal.innerHTML = totalUp + scoreLower;
         }
         if (submitCount == 13) {
-            submitScore.style.display = "none";
-            roll.style.display = "none";
-            hold.style.display = "none";
-            gameOver.style.display = "block";
-            newGame.style.display = "block";
-            n.style.display = "none";
-            o.style.display = "none";
-            p.style.display = "none";
-            console.log("game over")
+            finishGame();
         }
         rolls = 0;
     }
@@ -1817,45 +1282,10 @@ submit10.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit10 != false) {
         submit10 = true;
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
@@ -1888,15 +1318,7 @@ submit10.addEventListener("click", () => {
         };
     }
     if (submitCount == 13) {
-        submitScore.style.display = "none";
-        roll.style.display = "none";
-        hold.style.display = "none";
-        gameOver.style.display = "block";
-        newGame.style.display = "block";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
-        console.log("game over")
+        finishGame();
     }
     rolls = 0;
 })
@@ -1908,45 +1330,10 @@ submit11.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit11 != false) {
         submit11 = true;
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
@@ -1972,15 +1359,7 @@ submit11.addEventListener("click", () => {
         }
     }
     if (submitCount == 13) {
-        submitScore.style.display = "none";
-        roll.style.display = "none";
-        hold.style.display = "none";
-        gameOver.style.display = "block";
-        newGame.style.display = "block";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
-        console.log("game over")
+        finishGame();
     }
     rolls = 0;
 })
@@ -1992,46 +1371,11 @@ submit12.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit12 != false) {
         submit12 = true;
         console.log("yahtzee submit is ", submit12)
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
@@ -2051,15 +1395,7 @@ submit12.addEventListener("click", () => {
         grandTotal.innerHTML = totalUp + scoreLower;
     }
     if (submitCount == 13) {
-        submitScore.style.display = "none";
-        roll.style.display = "none";
-        hold.style.display = "none";
-        gameOver.style.display = "block";
-        newGame.style.display = "block";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
-        console.log("game over")
+        finishGame();
     }
     console.log("yahtzee score is ", yahtzeeScore)
     rolls = 0;
@@ -2072,60 +1408,17 @@ submit13.addEventListener("click", () => {
     submitScore.style.display = "none";
     submitCount++;
     console.log("submit count is ", submitCount)
-    hold1 = false;
-    hold1Text = "Hold";
-    changeText1("Hold");
-    changeColour2();
-    hold2 = false;
-    hold2Text = "Hold";
-    changeText2("Hold");
-    changeColour4();
-    hold3 = false;
-    hold3Text = "Hold";
-    changeText3("Hold");
-    changeColour6();
-    hold4 = false;
-    hold4Text = "Hold";
-    changeText4("Hold");
-    changeColour8();
-    hold5 = false;
-    hold5Text = "Hold";
-    changeText5("Hold");
-    changeColour10();
-    hold.style.display = "none";
+    resetHold();
     if (submit13 != false) {
         submit13 = true;
-        a.style.display = "none";
-        b.style.display = "none";
-        c.style.display = "none";
-        d.style.display = "none";
-        e.style.display = "none";
-        f.style.display = "none";
-        g.style.display = "none";
-        h.style.display = "none";
-        i.style.display = "none";
-        j.style.display = "none";
-        k.style.display = "none";
-        l.style.display = "none";
-        m.style.display = "none";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
+        hideTickBox()
         roll.style.display = "block";
 
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         sum13 = randomNumber1 + randomNumber2 + randomNumber3 + randomNumber4 + randomNumber5
     }
     if (submitCount == 13) {
-        submitScore.style.display = "none";
-        roll.style.display = "none";
-        hold.style.display = "none";
-        gameOver.style.display = "block";
-        newGame.style.display = "block";
-        n.style.display = "none";
-        o.style.display = "none";
-        p.style.display = "none";
-        console.log("game over")
+        finishGame();
     }
     score13.innerHTML = sum13;
     scoreLower += sum13;
