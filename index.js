@@ -13,6 +13,7 @@ const dice5black = document.getElementById("dice5black");
 const dice6black = document.getElementById("dice6black");
 const press_roll = document.getElementById("press_roll");
 
+let diceSound = document.getElementById("sound");
 let hold = document.getElementById("hold")
 let hold1 = document.getElementById("hold1");
 let hold2 = document.getElementById("hold2");
@@ -560,7 +561,6 @@ function changeColour9() {
 function changeColour10() {
     document.getElementById("hold5").style.backgroundColor = "lightslategrey"
 }
-
 function changeBack1() {
     document.getElementById("row1").style.backgroundColor = "lightslategrey"
     document.getElementById("row1_2").style.backgroundColor = "lightslategrey"
@@ -884,100 +884,105 @@ hold5.addEventListener("click", () => {
 });
 
 roll.addEventListener("click", () => {
-    submitTitle.style.display = "block";
-    yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "none";
-    showRolls.style.display = "block";
-    if (submit1 != true) {
-        a.style.display = "block";
-    }
-    if (submit2 != true) {
-        b.style.display = "block";
-    }
-    if (submit3 != true) {
-        c.style.display = "block";
-    }
-    if (submit4 != true) {
-        d.style.display = "block";
-    }
-    if (submit5 != true) {
-        e.style.display = "block";
-    }
-    if (submit6 != true) {
-        f.style.display = "block";
-    }
-    if (submit7 != true) {
-        g.style.display = "block";
-    }
-    if (submit8 != true) {
-        h.style.display = "block";
-    }
-    if (submit9 != true) {
-        i.style.display = "block";
-    }
-    if (submit10 != true) {
-        j.style.display = "block";
-    }
-    if (submit11 != true) {
-        k.style.display = "block";
-    }
-    if (submit12 != true) {
-        l.style.display = "block";
-    }
-    if (submit13 != true) {
-        m.style.display = "block";
-    }
-    if (submit14 != true) {
-        n.style.display = "block";
-    }
-    if (submit15 != true) {
-        o.style.display = "block";
-    }
-    if (submit16 != true) {
-        p.style.display = "block";
-    }
+    diceSound.play();
+    setTimeout(function () {
+        submitTitle.style.display = "block";
+        yahtzeeBonus.style.display = "none";
+        pressRoll.style.display = "none";
+        showRolls.style.display = "block";
+        if (submit1 != true) {
+            a.style.display = "block";
+        }
+        if (submit2 != true) {
+            b.style.display = "block";
+        }
+        if (submit3 != true) {
+            c.style.display = "block";
+        }
+        if (submit4 != true) {
+            d.style.display = "block";
+        }
+        if (submit5 != true) {
+            e.style.display = "block";
+        }
+        if (submit6 != true) {
+            f.style.display = "block";
+        }
+        if (submit7 != true) {
+            g.style.display = "block";
+        }
+        if (submit8 != true) {
+            h.style.display = "block";
+        }
+        if (submit9 != true) {
+            i.style.display = "block";
+        }
+        if (submit10 != true) {
+            j.style.display = "block";
+        }
+        if (submit11 != true) {
+            k.style.display = "block";
+        }
+        if (submit12 != true) {
+            l.style.display = "block";
+        }
+        if (submit13 != true) {
+            m.style.display = "block";
+        }
+        if (submit14 != true) {
+            n.style.display = "block";
+        }
+        if (submit15 != true) {
+            o.style.display = "block";
+        }
+        if (submit16 != true) {
+            p.style.display = "block";
+        }
 
-    hold.style.display = "block";
-    hideDice();
-
-    if (hold1 != true) {
-        randomNumber1 = Math.floor(Math.random() * 6) + 1;
-        greyDice1();
-    }
-    if (hold2 != true) {
-        randomNumber2 = Math.floor(Math.random() * 6) + 1;
-        greyDice2();
-    }
-    if (hold3 != true) {
-        randomNumber3 = Math.floor(Math.random() * 6) + 1;
-        greyDice3();
-    }
-    if (hold4 != true) {
-        randomNumber4 = Math.floor(Math.random() * 6) + 1;
-        greyDice4();
-    }
-    if (hold5 != true) {
-        randomNumber5 = Math.floor(Math.random() * 6) + 1;
-        greyDice5();
-    }
-
-    let randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
-    console.log(randomNumbers)
-    rolls += 1;
-    showRolls.innerHTML = `Rolls: ${rolls}`;
-    console.log(rolls, "rolls")
-    if (rolls == 3) {
-        submitScore.style.display = "block"
         hold.style.display = "block";
-        roll.style.display = "none";
-        resetHold();
-        blackDice1();
-        blackDice2();
-        blackDice3();
-        blackDice4();
-        blackDice5();
-    }
+        hideDice();
+
+        if (hold1 != true) {
+            randomNumber1 = Math.floor(Math.random() * 6) + 1;
+            greyDice1();
+        }
+        if (hold2 != true) {
+            randomNumber2 = Math.floor(Math.random() * 6) + 1;
+            greyDice2();
+        }
+        if (hold3 != true) {
+            randomNumber3 = Math.floor(Math.random() * 6) + 1;
+            greyDice3();
+        }
+        if (hold4 != true) {
+            randomNumber4 = Math.floor(Math.random() * 6) + 1;
+            greyDice4();
+        }
+        if (hold5 != true) {
+            randomNumber5 = Math.floor(Math.random() * 6) + 1;
+            greyDice5();
+        }
+
+        let randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
+        console.log(randomNumbers)
+        rolls += 1;
+        showRolls.innerHTML = `Rolls: ${rolls}`;
+        console.log(rolls, "rolls")
+        if (rolls == 3) {
+            submitScore.style.display = "block"
+            hold.style.display = "block";
+            roll.style.display = "none";
+            resetHold();
+            blackDice1();
+            blackDice2();
+            blackDice3();
+            blackDice4();
+            blackDice5();
+        }
+    }, 600)
 });
+
+
 submit1.addEventListener("click", () => {
     hideBlackDice();
     hideDice();
