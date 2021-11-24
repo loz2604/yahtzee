@@ -812,6 +812,212 @@ td{
 @media all and (max-width:1200px) {
     body{
        display: flex;
-    flex-direction: column; 
+        flex-direction: column; 
+    }
+}
+@media all and (max-width:500px) {
+    .dice{
+        width:440px;
+    }
+    #hold1{
+        margin-right: 30px;
+        margin-left: 22px;
+        width:55px;
+    }
+    #hold2{
+        margin-right: 30px;
+        width:55px;
+    }
+    #hold3{
+        margin-right: 30px;
+        width:55px;
+    }
+    #hold4{
+        margin-right: 30px;
+        width:55px;
+    }
+    #hold5{
+      
+        width:55px;
+    }
+    #dice1{
+        width:70px
+    }
+    #dice2{
+        width:70px
+    }
+    #dice3{
+        width:70px
+    }
+    #dice4{
+        width:70px
+    }
+    #dice5{
+        width:70px
+    }
+    #dice6{
+width:70px
+    }
+    #dice1_2{
+width:70px
+    }
+    #dice2_2{
+width:70px
+    }
+    #dice3_2{
+width:70px
+    }
+    #dice4_2{
+width:70px
+    }
+    #dice5_2{
+width:70px
+    }
+    #dice6_2{
+width:70px
+    }
+    #dice1_3{
+width:70px
+    }
+    #dice2_3{
+width:70px
+    }
+    #dice3_3{
+width:70px
+    }
+    #dice4_3{
+width:70px
+    }
+    #dice5_3{
+width:70px
+    }
+    #dice6_3{
+width:70px
+    }
+    #dice1_4{
+width:70px
+    }
+    #dice2_4{
+width:70px
+    }
+    #dice3_4{
+width:70px
+    }
+    #dice4_4{
+width:70px
+    }
+    #dice5_4{
+width:70px
+    }
+    #dice6_4{
+width:70px
+    }
+    #dice1_5{
+width:70px
+    }
+    #dice2_5{
+width:70px
+    }
+    #dice3_5{
+width:70px
+    }
+    #dice4_5{
+width:70px
+    }
+    #dice5_5{
+width:70px
+    }
+    #dice6_5{
+width:70px
+    }
+    #dice1black{
+width:70px
+    }
+    #dice2black{
+width:70px
+    }
+    #dice3black{
+width:70px
+    }
+    #dice4black{
+width:70px
+    }
+    #dice5black{
+width:70px
+    }
+    #dice6black{
+width:70px
+    }
+    #dice1_2black{
+width:70px
+    }
+    #dice2_2black{
+width:70px
+    }
+    #dice3_2black{
+width:70px
+    }
+    #dice4_2black{
+width:70px
+    }
+#dice5_2black{
+    width:70px
+}
+    #dice6_2black{
+width:70px
+    }
+    #dice1_3black{
+width:70px
+    }
+    #dice2_3black{
+width:70px
+    }
+    #dice3_3black{
+width:70px
+    }
+    #dice4_3black{
+width:70px
+    }
+    #dice5_3black{
+width:70px
+    }
+    #dice6_3black{
+width:70px
+    }
+    #dice1_4black{
+width:70px
+    }
+    #dice2_4black{
+width:70px
+    }
+    #dice3_4black{
+width:70px
+    }
+    #dice4_4black{
+width:70px
+    }
+    #dice5_4black{
+width:70px
+    }
+    #dice6_4black{
+width:70px
+    }
+    #dice1_5black{
+width:70px
+    }
+    #dice2_5black{
+width:70px
+    }
+    #dice3_5black{
+width:70px
+    }
+    #dice4_5black{
+width:70px
+    }
+    #dice5_5black{
+width:70px
+    }
+    #dice6_5black{
+width:70px
     }
 }
