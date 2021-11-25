@@ -26,6 +26,7 @@ let submitScore = document.getElementById("submitScore");
 let showRolls = document.getElementById("showRolls");
 let rolls = 0;
 
+let submitTitle1 = document.getElementById("submitTitle1")
 let a = document.getElementById("a");
 let b = document.getElementById("b");
 let c = document.getElementById("c");
@@ -149,6 +150,7 @@ function finishGame() {
     console.log("game over")
 }
 function hideTickBox() {
+    submitTitle1.style.display = "none";
     a.style.display = "none";
     b.style.display = "none";
     c.style.display = "none";
@@ -886,7 +888,7 @@ hold5.addEventListener("click", () => {
 roll.addEventListener("click", () => {
     diceSound.play();
     setTimeout(function () {
-        submitTitle.style.display = "block";
+        submitTitle1.style.display = "block";
         yahtzeeBonus.style.display = "none";
         pressRoll.style.display = "none";
         showRolls.style.display = "block";
@@ -989,7 +991,6 @@ submit1.addEventListener("click", () => {
     submitCount++;
     console.log("submit count is ", submitCount)
     resetHold();
-
     if (submit1 != false) {
         submit1 = true;
         console.log("submit1 is ", submit1)
@@ -1020,7 +1021,6 @@ submit1.addEventListener("click", () => {
         finishGame();
     }
 });
-
 submit2.addEventListener("click", () => {
     pressRoll.style.display = "block";
     hideBlackDice();
