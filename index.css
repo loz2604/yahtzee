@@ -573,6 +573,33 @@ h3{
     background-color: darkslategrey;
     /* background-color: rgb(169, 192, 216); */
 }
+#rulesBtn{
+    width: 130px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 0.4em;
+    padding: 5px;
+    font-size: larger;
+    font-weight: bold;
+    background-color: lightslategrey;
+}
+#rulesBtn:active{
+    background-color: darkslategrey;
+}
+#rules{
+    border: rgb(55, 63, 71) solid 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 600px;
+    font-family:'Prompt', sans-serif;
+    display: none;
+    background-color: rgb(158, 162, 165);
+}
+#rulesHeading{
+    justify-content: center;
+    display:flex;
+    /* align-items: center; */
+}
 table{
     display: flex;
     align-items: center;

@@ -20,12 +20,15 @@ let hold2 = document.getElementById("hold2");
 let hold3 = document.getElementById("hold3");
 let hold4 = document.getElementById("hold4");
 let hold5 = document.getElementById("hold5");
+let rulesBtn = document.getElementById("rulesBtn");
+let rules = document.getElementById("rules");
 let newGame = document.getElementById("newGame")
 let gameOver = document.getElementById("gameOver");
 let submitScore = document.getElementById("submitScore");
 let showRolls = document.getElementById("showRolls");
 let rolls = 0;
 
+let scoreSheet = document.getElementById("scoreSheet");
 let submitTitle1 = document.getElementById("submitTitle1")
 let a = document.getElementById("a");
 let b = document.getElementById("b");
@@ -533,6 +536,12 @@ function changeText4() {
 function changeText5() {
     document.getElementById("hold5").innerHTML = hold5Text;
 }
+function changeText6() {
+    document.getElementById("rulesBtn").innerHTML = hideRules;
+}
+function changeText7() {
+    document.getElementById("rulesBtn").innerHTML = showRules;
+}
 function changeColour1() {
     document.getElementById("hold1").style.backgroundColor = "darkslategrey"
 }
@@ -981,6 +990,24 @@ roll.addEventListener("click", () => {
             blackDice5();
         }
     }, 600)
+});
+rulesBtn.addEventListener("click", () => {
+    if (rulesBtn != true) {
+        rulesBtn = true;
+        scoreSheet.style.display = "none";
+        rules.style.display = "block";
+        hideRules = "Hide Rules";
+        changeText6("Hide Rules")
+
+    } else {
+        rulesBtn = false;
+        scoreSheet.style.display = "block";
+        rules.style.display = "none";
+        showRules = "Show Rules";
+        changeText7("Show Rules")
+
+    }
+
 });
 submit1.addEventListener("click", () => {
     hideBlackDice();
