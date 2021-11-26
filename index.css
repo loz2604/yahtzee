@@ -29,7 +29,7 @@ body{
 }
 h1{
     font-family: 'Prompt', sans-serif;
-    font-size: 60px;
+    font-size: 80px;
 }
 h2{
     font-family: 'Prompt', sans-serif;
@@ -38,6 +38,7 @@ h2{
 h3{
     font-family: 'Prompt', sans-serif;
     font-size: 40px;
+    width: fit-content;
 }
 #rolling{
     display:flex;
@@ -479,6 +480,7 @@ h3{
     display: none;
 }
 #twoPlayerBtn{
+    padding: 10px;
     margin-top: 10px;
     cursor: pointer;
     border-radius: 0.4em;
@@ -516,9 +518,10 @@ h3{
 }
 #newGame{
     cursor: pointer;
+    padding: 15px;
     border-radius: 0.4em;
     display:none;
-    font-size: larger;
+    font-size: xx-large;
     font-weight: bold;
     font-family: 'Prompt', sans-serif;
     background-color: lightslategrey;
