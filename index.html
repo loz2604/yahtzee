@@ -16,11 +16,13 @@
 
 <body>
     <div id="game">
-        <div class="heading">
+        <div id="heading">
             <h1>Yahtzee</h1>
         </div>
+        <h2 id="player1">Player 1</h2>
+        <h2 id=player2>Player 2</h2>
         <div class="button"><button id="roll">Roll</button></div>
-        <div class="dice">
+        <div id="dice">
             <img id="dice1" src="images/dice1.PNG ">
             <img id="dice1black" src="images/dice1black.png ">
             <img id="dice2" src="images/dice2.PNG ">
@@ -89,15 +91,16 @@
             <img id="dice6_5black" src="images/dice6black.png ">
 
             <img id="pressRoll" src="images/press_roll.png">
-            <!-- <img id="rolling" src="images/rolling.png"> -->
+            <img id="rolling" src="images/rolling.png">
         </div>
+
+        <button id="twoPlayerBtn">2 Players</button>
         <div id="gameOver">
             <h3>Game Over!</h3>
             <h3 id="finalScore"></h3>
+            <h3 id="finalScore2"></h3>
         </div>
-        <div id="yahtzeeBonus">
-            <h3>Please Submit Another Score</h3>
-        </div>
+
         <div id="submitScore">
             <h3>Submit Score</h3>
         </div>
@@ -109,7 +112,11 @@
             <button id="hold4">Hold</button>
             <button id="hold5">Hold</button>
         </div>
+        <div id="yahtzeeBonus">
+            <h3>Submit Another Score</h3>
+        </div>
         <div><button id="rulesBtn">Show Rules</button></div>
+
         <div class="button"><button id="newGame">New Game</button></div>
         <div id="rolls">
             <div id="showRolls"></div>
@@ -201,7 +208,7 @@
 
             </tr>
             <tr class="second">
-                <td id="row10">Full House</td>
+                <td id="row10">Full House (3 of one number & 2 of another)</td>
                 <td id="row10_2">Score 25</td>
                 <td id="score9"></td>
                 <td id="i"><input id="fullHouse" type="checkbox"><button id="submit9">Submit</button></td>
@@ -290,70 +297,70 @@
             score or a zero.</p>
 
     </div>
-    <!-- <div id="player2scoreSheet">
+    <div id="scoreSheet2">
         <table>
             <tr>
                 <th>Upper Section</th>
                 <th>How To Score</th>
                 <th>Score</th>
-                <th id="submitTitle">Submit</th>
+                <th id="submitTitle2">Submit</th>
             </tr>
             <tr class="first">
-                <td id="row1">Aces = 1 </td>
-                <td id="row1_2">Count And Add Only Aces</td>
-                <td id="score1"></td>
-                <td id="a"><input id="ones" type="checkbox"><button id="submit1">Submit</button></td>
+                <td id="p2row1">Aces = 1 </td>
+                <td id="p2row1_2">Count And Add Only Aces</td>
+                <td id="score1_2"></td>
+                <td id="a2"><input id="ones2" type="checkbox"><button id="submit1_2">Submit</button></td>
 
             </tr>
             <tr class="second">
-                <td id="row2">Twos = 2</td>
-                <td id="row2_2">Count And Add Only Twos</td>
-                <td id="score2"></td>
-                <td id="b"><input id="twos" type="checkbox"><button id="submit2">Submit</button></td>
+                <td id="p2row2">Twos = 2</td>
+                <td id="p2row2_2">Count And Add Only Twos</td>
+                <td id="score2_2"></td>
+                <td id="b2"><input id="twos2" type="checkbox"><button id="submit2_2">Submit</button></td>
 
             </tr>
             <tr class="first">
-                <td id="row3">Threes = 3</td>
-                <td id="row3_2">Count And Add Only Threes</td>
-                <td id="score3"></td>
-                <td id="c"><input id="threes" type="checkbox"><button id="submit3">Submit</button></td>
+                <td id="p2row3">Threes = 3</td>
+                <td id="p2row3_2">Count And Add Only Threes</td>
+                <td id="score3_2"></td>
+                <td id="c2"><input id="threes2" type="checkbox"><button id="submit3_2">Submit</button></td>
 
             </tr>
             <tr class="second">
-                <td id="row4">Fours = 4</td>
-                <td id="row4_2">Count And Add Only Fours</td>
-                <td id="score4"></td>
-                <td id="d"><input id="fours" type="checkbox"><button id="submit4">Submit</button></td>
+                <td id="p2row4">Fours = 4</td>
+                <td id="p2row4_2">Count And Add Only Fours</td>
+                <td id="score4_2"></td>
+                <td id="d2"><input id="fours2" type="checkbox"><button id="submit4_2">Submit</button></td>
 
             </tr>
             <tr class="first">
-                <td id="row5">Fives = 5</td>
-                <td id="row5_2">Count And Add Only Fives</td>
-                <td id="score5"></td>
-                <td id="e"><input id="fives" type="checkbox"><button id="submit5">Submit</button></td>
+                <td id="p2row5">Fives = 5</td>
+                <td id="p2row5_2">Count And Add Only Fives</td>
+                <td id="score5_2"></td>
+                <td id="e2"><input id="fives2" type="checkbox"><button id="submit5_2">Submit</button></td>
 
             </tr>
             <tr class="second">
-                <td id="row6">Sixes = 6</td>
-                <td id="row6_2">Count And Add Only Sixes</td>
-                <td id="score6"></td>
-                <td id="f"><input id="sixes" type="checkbox"><button id="submit6">Submit</button></td>
+                <td id="p2row6">Sixes = 6</td>
+                <td id="p2row6_2">Count And Add Only Sixes</td>
+                <td id="score6_2"></td>
+                <td id="f2"><input id="sixes2" type="checkbox"><button id="submit6_2">Submit</button></td>
 
             </tr>
             <tr class="first">
                 <td>TOTAL SCORE</td>
                 <td></td>
-                <td id="totalScore"></td>
+                <td id="totalScore2"></td>
             </tr>
             <tr class="second">
                 <td id="row7">BONUS (If Total Score Is 63 Or Over)</td>
                 <td id="row7_2">Score 35</td>
-                <td id="bonus"></td>
+                <td id="bonus2"></td>
             </tr>
             <tr class="first">
                 <td>TOTAL Of Upper Section</td>
                 <td></td>
-                <td id="totalUpper"></td>
+                <td id="p2totalUpper"></td>
             </tr>
             <tr class="second">
                 <th>Lower Section</th>
@@ -361,84 +368,84 @@
                 <th>Score</th>
             </tr>
             <tr class="second">
-                <td id="row8">3 Of A Kind</td>
-                <td id="row8_2">Add Total Of All Dice</td>
-                <td id="score7"></td>
-                <td id="g"><input id="threeOfAKind" type="checkbox"><button id="submit7">Submit</button></td>
+                <td id="p2row8">3 Of A Kind</td>
+                <td id="p2row8_2">Add Total Of All Dice</td>
+                <td id="score7_2"></td>
+                <td id="g2"><input id="threeOfAKind2" type="checkbox"><button id="submit7_2">Submit</button></td>
 
             </tr>
             <tr class="first">
-                <td id="row9">4 Of A Kind</td>
-                <td id="row9_2">Add Total Of All Dice</td>
-                <td id="score8"></td>
-                <td id="h"><input id="fourOfAKind" type="checkbox"><button id="submit8">Submit</button></td>
+                <td id="p2row9">4 Of A Kind</td>
+                <td id="p2row9_2">Add Total Of All Dice</td>
+                <td id="score8_2"></td>
+                <td id="h2"><input id="fourOfAKind2" type="checkbox"><button id="submit8_2">Submit</button></td>
 
             </tr>
             <tr class="second">
-                <td id="row10">Full House</td>
-                <td id="row10_2">Score 25</td>
-                <td id="score9"></td>
-                <td id="i"><input id="fullHouse" type="checkbox"><button id="submit9">Submit</button></td>
+                <td id="p2row10">Full House</td>
+                <td id="p2row10_2">Score 25</td>
+                <td id="score9_2"></td>
+                <td id="i2"><input id="fullHouse2" type="checkbox"><button id="submit9_2">Submit</button></td>
 
             </tr>
             <tr class="first">
-                <td id="row11">Small Straight (Sequence Of 4)</td>
-                <td id="row11_2">Score 30</td>
-                <td id="score10"></td>
-                <td id="j"><input id="smallStraight" type="checkbox"><button id="submit10">Submit</button></td>
+                <td id="p2row11">Small Straight (Sequence Of 4)</td>
+                <td id="p2row11_2">Score 30</td>
+                <td id="score10_2"></td>
+                <td id="j2"><input id="smallStraight2" type="checkbox"><button id="submit10_2">Submit</button></td>
 
             </tr>
             <tr class="second">
-                <td id="row12">Large Straight (Sequence Of 5)</td>
-                <td id="row12_2">Score 40</td>
-                <td id="score11"></td>
-                <td id="k"><input id="largeStraight" type="checkbox"><button id="submit11">Submit</button></td>
+                <td id="p2row12">Large Straight (Sequence Of 5)</td>
+                <td id="p2row12_2">Score 40</td>
+                <td id="score11_2"></td>
+                <td id="k2"><input id="largeStraight2" type="checkbox"><button id="submit11_2">Submit</button></td>
 
             </tr>
             <tr class="first">
-                <td id="row13">Yahtzee (5 Of A Kind)</td>
-                <td id="row13_2">Score 50</td>
-                <td id="score12"></td>
-                <td id="l"><input id="yahtzee" type="checkbox"><button id="submit12">Submit</button></td>
+                <td id="p2row13">Yahtzee (5 Of A Kind)</td>
+                <td id="p2row13_2">Score 50</td>
+                <td id="score12_2"></td>
+                <td id="l2"><input id="yahtzee2" type="checkbox"><button id="submit12_2">Submit</button></td>
 
             </tr>
             <tr class="second">
-                <td id="row14">Chance</td>
-                <td id="row14_2">Score Total Of All 5 Dice</td>
-                <td id="score13"></td>
-                <td id="m"><input id="chance" type="checkbox"><button id="submit13">Submit</button></td>
+                <td id="p2row14">Chance</td>
+                <td id="p2row14_2">Score Total Of All 5 Dice</td>
+                <td id="score13_2"></td>
+                <td id="m2"><input id="chance2" type="checkbox"><button id="submit13_2">Submit</button></td>
 
             </tr>
             <tr class="first">
                 <td id="row15">Yahtzee Bonus</td>
                 <td id="row15_2">Tick For Each Bonus</td>
                 <td id="row15_3"></td>
-                <td id="n"><input id="y1" type="checkbox"><button id="submit14">Submit</button></td>
-                <td id="o"><input id="y2" type="checkbox"><button id="submit15">Submit</button></td>
-                <td id="p"><input id="y3" type="checkbox"><button id="submit16">Submit</button></td>
+                <td id="n2"><input id="y1_2" type="checkbox"><button id="submit14_2">Submit</button></td>
+                <td id="o2"><input id="y2_2" type="checkbox"><button id="submit15_2">Submit</button></td>
+                <td id="p2"><input id="y3_2" type="checkbox"><button id="submit16_2">Submit</button></td>
             </tr>
             <tr class="second">
                 <td></td>
                 <td>Score 100 Per Tick </td>
-                <td id="score14"></td>
+                <td id="score14_2"></td>
             </tr>
             <tr class="first">
                 <td>TOTAL Of Lower Section</td>
                 <td></td>
-                <td id="totalLower"></td>
+                <td id="p2totalLower"></td>
             </tr>
             <tr class="second">
                 <td>TOTAL Of Upper Section</td>
                 <td></td>
-                <td id="totalUpper2"></td>
+                <td id="p2totalUpper2"></td>
             </tr>
             <tr class="first">
                 <td>GRAND TOTAL</td>
                 <td></td>
-                <td id="grandTotal"></td>
+                <td id="grandTotal2"></td>
             </tr>
         </table>
-    </div> -->
+    </div>
     <script src="index.js"></script>
 </body>
 

@@ -24,8 +24,8 @@ body{
     flex-direction: column;
     align-items: center;
 }
-#player2scoreSheet{
-    display:none;
+#scoreSheet2{
+    display:none;   
 }
 h1{
     font-family: 'Prompt', sans-serif;
@@ -39,7 +39,16 @@ h3{
     font-family: 'Prompt', sans-serif;
     font-size: 40px;
 }
-.dice{
+#rolling{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
+    width:350px;
+    padding: 10px;
+    display:none;
+}
+#dice{
     display:flex;
     justify-content: center;
     align-items: center;
@@ -469,7 +478,27 @@ h3{
     width:80px;
     display: none;
 }
+#twoPlayerBtn{
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 0.4em;
+    font-size: larger;
+    font-weight: bold;
+    font-family: 'Prompt', sans-serif;
+    background-color: lightslategrey;
+}
+#twoPlayerBtn:active{
+    background-color: darkslategrey;
+}
 #gameOver{
+    display: none;
+}
+#player1{
+    display: none;
+  font-size:xx-large;
+}
+#player2{
+    font-size:xx-large;
     display: none;
 }
 #yahtzeeBonus{
@@ -478,7 +507,6 @@ h3{
 #submitScore{
     display:none;
 }
-
 .button{
     padding:10px;
     display:flex;
@@ -574,6 +602,7 @@ h3{
     /* background-color: rgb(169, 192, 216); */
 }
 #rulesBtn{
+    display:none;
     width: 130px;
     margin-top: 10px;
     cursor: pointer;
@@ -693,6 +722,70 @@ td{
     display:none;
     cursor: pointer;
  }
+ #submit1_2{
+    cursor: pointer;
+     display:none;
+ }
+ #submit2_2{
+    cursor: pointer;
+    display:none;
+}
+#submit3_2{
+    cursor: pointer;
+    display:none;
+}
+#submit4_2{
+    cursor: pointer;
+    display:none;
+}
+#submit5_2{
+    cursor: pointer;
+    display:none;
+}
+#submit6_2{
+    cursor: pointer;
+    display:none;
+}
+#submit7_2{
+    cursor: pointer;
+    display:none;
+}
+#submit8_2{
+    cursor: pointer;
+    display:none;
+}
+#submit9_2{
+    cursor: pointer;
+    display:none;
+}
+#submit10_2{
+    cursor: pointer;
+    display:none;
+}
+#submit11_2{
+    cursor: pointer;
+    display:none;
+}
+#submit12_2{
+    cursor: pointer;
+    display:none;
+}
+#submit13_2{
+    cursor: pointer;
+    display:none;
+}
+#submit14_2{
+    cursor: pointer;
+    display:none;
+}
+#submit15_2{
+    cursor: pointer;
+    display:none;
+}
+#submit16_2{
+    cursor: pointer;
+    display:none;
+}
  #score1{
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
@@ -754,6 +847,11 @@ td{
     font-size: x-large;
  }
  #score13{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score14{
     padding-left: 10px;
     font-family: 'Gochi Hand', cursive;
     font-size: x-large;
@@ -837,6 +935,157 @@ td{
     cursor: pointer;
 }
 #y3{
+    cursor: pointer;
+}
+#score1_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score2_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score3_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score4_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score5_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score6_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score7_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score8_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score9_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score10_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score11_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size:x-large;
+ }
+ #score12_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score13_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #score14_2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large; 
+ }
+ #totalScore2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #bonus2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #p2totalUpper{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #p2totalLower{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #p2totalUpper2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #grandTotal2{
+    padding-left: 10px;
+    font-family: 'Gochi Hand', cursive;
+    font-size: x-large;
+ }
+ #submitTitle2{
+     display: none;
+ }
+#ones2{
+    cursor: pointer;
+}
+#twos2{
+    cursor: pointer;
+}
+#threes2{
+    cursor: pointer;
+}
+#fours2{
+    cursor: pointer;
+}
+#fives2{
+    cursor: pointer;
+}
+#sixes2{
+    cursor: pointer;
+}
+#threeOfAKind2{
+    cursor: pointer;
+}
+#fourOfAKind2{
+    cursor: pointer;
+}
+#fullHouse2{
+    cursor: pointer;
+}
+#smallStraight2{
+    cursor: pointer;
+}
+#largeStraight2{
+    cursor: pointer;
+}
+#yahtzee2{
+    cursor: pointer;
+}
+#chance2{
+    cursor: pointer;
+}
+#y1_2{
+    cursor: pointer;
+}
+#y2_2{
+    cursor: pointer;
+}
+#y3_2{
     cursor: pointer;
 }
 @media all and (max-width:1200px) {
