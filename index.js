@@ -232,6 +232,7 @@ function finishGame() {
     finalScore();
     console.log("game over")
     dice.style.display = "none";
+    heading.style.display = "none"
 }
 function finishGame2() {
     player1Turn.style.display = "none";
