@@ -17,6 +17,7 @@ const player1Turn = document.getElementById("player1");
 const player2Turn = document.getElementById("player2");
 
 let diceSound = document.getElementById("sound");
+let dice = document.getElementById("dice");
 let hold = document.getElementById("hold")
 let hold1 = document.getElementById("hold1");
 let hold2 = document.getElementById("hold2");
@@ -160,6 +161,9 @@ let score14_2 = document.getElementById("score14_2");
 let score15_2 = document.getElementById("score15_2");
 let score16_2 = document.getElementById("score16_2");
 
+let rolling = document.getElementById("rolling");
+let pressRollThere = true;
+
 let yahtzeeScore = 0;
 let yahtzeeBonusScore = 0;
 let score = 0;
@@ -184,7 +188,6 @@ function reload() {
     reload = location.reload();
 }
 newGame.addEventListener("click", reload, false);
-
 function resetHold() {
     hold1 = false;
     hold1Text = "Hold";
@@ -218,7 +221,6 @@ function finalScore2() {
     document.getElementById("finalScore").innerHTML = (`Player 1 Final Score: ${finalTotal}`);
     document.getElementById("finalScore2").innerHTML = (`Player 2 Final Score: ${finalTotal2}`);
 }
-let dice = document.getElementById("dice");
 function finishGame() {
     player1Turn.style.display = "none";
     player2Turn.style.display = "none";
@@ -230,7 +232,6 @@ function finishGame() {
     gameOver.style.display = "block";
     newGame.style.display = "block";
     finalScore();
-    console.log("game over")
     dice.style.display = "none";
     heading.style.display = "none"
 }
@@ -642,14 +643,12 @@ function upperBonus2() {
 }
 function upperTotals() {
     totalUp = score + bonusUp;
-    console.log("upper total is ", totalUp)
     totalUpper.innerHTML = totalUp;
     totalUpper2.innerHTML = totalUp;
     grandTotal.innerHTML = totalUp + scoreLower;
 };
 function upperTotals2() {
     totalUp2 = player2score + bonusUp2;
-    console.log("upper total is ", totalUp2)
     p2totalUpper.innerHTML = totalUp2;
     p2totalUpper2.innerHTML = totalUp2;
     grandTotal2.innerHTML = totalUp2 + scoreLower2;
@@ -780,7 +779,6 @@ function changeBack15() {
     document.getElementById("row15_2").style.backgroundColor = "lightslategrey"
     document.getElementById("row15_3").style.backgroundColor = "lightslategrey"
 }
-
 function changeBack1_2() {
     document.getElementById("p2row1").style.backgroundColor = "lightslategrey"
     document.getElementById("p2row1_2").style.backgroundColor = "lightslategrey"
@@ -860,7 +858,6 @@ twoPlayerBtn.addEventListener("click", () => {
     twoPlayers = true;
     twoPlayerBtn.style.display = "none";
     player1Turn.style.display = "block";
-    console.log("Two Player Game is", twoPlayers)
     heading.style.display = "none";
 })
 ones.addEventListener("click", () => {
@@ -871,7 +868,6 @@ ones.addEventListener("click", () => {
         ones = false;
         submit1.style.display = "none";
     }
-    console.log("ones is ", ones)
 });
 twos.addEventListener("click", () => {
     if (twos != true) {
@@ -881,7 +877,6 @@ twos.addEventListener("click", () => {
         twos = false;
         submit2.style.display = "none";
     }
-    console.log("twos is ", twos)
 });
 threes.addEventListener("click", () => {
     if (threes != true) {
@@ -891,7 +886,6 @@ threes.addEventListener("click", () => {
         threes = false;
         submit3.style.display = "none";
     }
-    console.log("threes is ", threes)
 });
 fours.addEventListener("click", () => {
     if (fours != true) {
@@ -901,7 +895,6 @@ fours.addEventListener("click", () => {
         fours = false;
         submit4.style.display = "none";
     }
-    console.log("fours is ", fours)
 });
 fives.addEventListener("click", () => {
     if (fives != true) {
@@ -911,7 +904,6 @@ fives.addEventListener("click", () => {
         fives = false;
         submit5.style.display = "none";
     }
-    console.log("fives is ", fives)
 });
 sixes.addEventListener("click", () => {
     if (sixes != true) {
@@ -921,7 +913,6 @@ sixes.addEventListener("click", () => {
         sixes = false;
         submit6.style.display = "none";
     }
-    console.log("sixes is ", sixes)
 });
 threeOfAKind.addEventListener("click", () => {
     if (threeOfAKind != true) {
@@ -931,7 +922,6 @@ threeOfAKind.addEventListener("click", () => {
         threeOfAKind = false;
         submit7.style.display = "none";
     }
-    console.log("threeOfAKind is ", threeOfAKind)
 })
 fourOfAKind.addEventListener("click", () => {
     if (fourOfAKind != true) {
@@ -941,7 +931,6 @@ fourOfAKind.addEventListener("click", () => {
         fourOfAKind = false;
         submit8.style.display = "none";
     }
-    console.log("fourOfAKind ", fourOfAKind)
 })
 fullHouse.addEventListener("click", () => {
     if (fullHouse != true) {
@@ -951,7 +940,6 @@ fullHouse.addEventListener("click", () => {
         fullHouse = false;
         submit9.style.display = "none";
     }
-    console.log("fullHouse ", fullHouse)
 })
 smallStraight.addEventListener("click", () => {
     if (smallStraight != true) {
@@ -961,7 +949,6 @@ smallStraight.addEventListener("click", () => {
         smallStraight = false;
         submit10.style.display = "none";
     }
-    console.log("smallStraight ", smallStraight)
 })
 largeStraight.addEventListener("click", () => {
     if (largeStraight != true) {
@@ -971,7 +958,6 @@ largeStraight.addEventListener("click", () => {
         largeStraight = false;
         submit11.style.display = "none";
     }
-    console.log("largeStraight ", largeStraight)
 })
 yahtzee.addEventListener("click", () => {
     if (yahtzee != true) {
@@ -981,7 +967,6 @@ yahtzee.addEventListener("click", () => {
         yahtzee = false;
         submit12.style.display = "none";
     }
-    console.log("yahtzee ", yahtzee)
 })
 chance.addEventListener("click", () => {
     if (chance != true) {
@@ -991,7 +976,6 @@ chance.addEventListener("click", () => {
         chance = false;
         submit13.style.display = "none";
     }
-    console.log("chance ", chance)
 });
 y1.addEventListener("click", () => {
     if (y1 != true) {
@@ -1001,7 +985,6 @@ y1.addEventListener("click", () => {
         y1 = false;
         submit14.style.display = "none";
     }
-    console.log("y1 ", y1)
 });
 y2.addEventListener("click", () => {
     if (y2 != true) {
@@ -1011,7 +994,6 @@ y2.addEventListener("click", () => {
         y2 = false;
         submit15.style.display = "none";
     }
-    console.log("y2 ", y2)
 });
 y3.addEventListener("click", () => {
     if (y3 != true) {
@@ -1021,7 +1003,6 @@ y3.addEventListener("click", () => {
         y3 = false;
         submit16.style.display = "none";
     }
-    console.log("y3 ", y3)
 });
 ones2.addEventListener("click", () => {
     if (ones2 != true) {
@@ -1031,7 +1012,6 @@ ones2.addEventListener("click", () => {
         ones2 = false;
         submit_2.style.display = "none";
     }
-    console.log("ones2 is ", ones)
 });
 twos2.addEventListener("click", () => {
     if (twos2 != true) {
@@ -1041,7 +1021,6 @@ twos2.addEventListener("click", () => {
         twos2 = false;
         submit2_2.style.display = "none";
     }
-    console.log("twos is ", twos2)
 });
 threes2.addEventListener("click", () => {
     if (threes2 != true) {
@@ -1051,7 +1030,6 @@ threes2.addEventListener("click", () => {
         threes2 = false;
         submit3_2.style.display = "none";
     }
-    console.log("threes is ", threes2)
 });
 fours2.addEventListener("click", () => {
     if (fours2 != true) {
@@ -1061,7 +1039,6 @@ fours2.addEventListener("click", () => {
         fours2 = false;
         submit4_2.style.display = "none";
     }
-    console.log("fours is ", fours2)
 });
 fives2.addEventListener("click", () => {
     if (fives2 != true) {
@@ -1071,7 +1048,6 @@ fives2.addEventListener("click", () => {
         fives2 = false;
         submit5_2.style.display = "none";
     }
-    console.log("fives is ", fives2)
 });
 sixes2.addEventListener("click", () => {
     if (sixes2 != true) {
@@ -1081,7 +1057,6 @@ sixes2.addEventListener("click", () => {
         sixes2 = false;
         submit6_2.style.display = "none";
     }
-    console.log("sixes is ", sixes2)
 });
 threeOfAKind2.addEventListener("click", () => {
     if (threeOfAKind2 != true) {
@@ -1091,7 +1066,6 @@ threeOfAKind2.addEventListener("click", () => {
         threeOfAKind2 = false;
         submit7_2.style.display = "none";
     }
-    console.log("threeOfAKind is ", threeOfAKind2)
 })
 fourOfAKind2.addEventListener("click", () => {
     if (fourOfAKind2 != true) {
@@ -1101,7 +1075,6 @@ fourOfAKind2.addEventListener("click", () => {
         fourOfAKind2 = false;
         submit8_2.style.display = "none";
     }
-    console.log("fourOfAKind ", fourOfAKind2)
 })
 fullHouse2.addEventListener("click", () => {
     if (fullHouse2 != true) {
@@ -1111,7 +1084,6 @@ fullHouse2.addEventListener("click", () => {
         fullHouse2 = false;
         submit9_2.style.display = "none";
     }
-    console.log("fullHouse ", fullHouse2)
 })
 smallStraight2.addEventListener("click", () => {
     if (smallStraight2 != true) {
@@ -1121,7 +1093,6 @@ smallStraight2.addEventListener("click", () => {
         smallStraight2 = false;
         submit10_2.style.display = "none";
     }
-    console.log("smallStraight ", smallStraight2)
 })
 largeStraight2.addEventListener("click", () => {
     if (largeStraight2 != true) {
@@ -1131,7 +1102,6 @@ largeStraight2.addEventListener("click", () => {
         largeStraight2 = false;
         submit11_2.style.display = "none";
     }
-    console.log("largeStraight ", largeStraight)
 })
 yahtzee2.addEventListener("click", () => {
     if (yahtzee2 != true) {
@@ -1141,7 +1111,6 @@ yahtzee2.addEventListener("click", () => {
         yahtzee2 = false;
         submit12_2.style.display = "none";
     }
-    console.log("yahtzee ", yahtzee2)
 })
 chance2.addEventListener("click", () => {
     if (chance2 != true) {
@@ -1151,7 +1120,6 @@ chance2.addEventListener("click", () => {
         chance2 = false;
         submit13_2.style.display = "none";
     }
-    console.log("chance ", chance)
 });
 y1_2.addEventListener("click", () => {
     if (y1_2 != true) {
@@ -1161,7 +1129,6 @@ y1_2.addEventListener("click", () => {
         y1_2 = false;
         submit14_2.style.display = "none";
     }
-    console.log("y1 ", y1_2)
 });
 y2_2.addEventListener("click", () => {
     if (y2_2 != true) {
@@ -1171,7 +1138,6 @@ y2_2.addEventListener("click", () => {
         y2_2 = false;
         submit15_2.style.display = "none";
     }
-    console.log("y2 ", y2_2)
 });
 y3_2.addEventListener("click", () => {
     if (y3_2 != true) {
@@ -1181,9 +1147,7 @@ y3_2.addEventListener("click", () => {
         y3_2 = false;
         submit16_2.style.display = "none";
     }
-    console.log("y3 ", y3_2)
 });
-
 hold1.addEventListener("click", () => {
     if (hold1 != true) {
         hold1 = true;
@@ -1198,7 +1162,6 @@ hold1.addEventListener("click", () => {
         changeColour2();
         greyDice1();
     }
-    console.log("hold1 is ", hold1)
 });
 hold2.addEventListener("click", () => {
     if (hold2 != true) {
@@ -1215,7 +1178,6 @@ hold2.addEventListener("click", () => {
         changeColour4();
         greyDice2();
     }
-    console.log("hold2 is ", hold2)
 });
 
 hold3.addEventListener("click", () => {
@@ -1232,7 +1194,6 @@ hold3.addEventListener("click", () => {
         changeColour6();
         greyDice3();
     }
-    console.log("hold3 is ", hold3)
 });
 
 hold4.addEventListener("click", () => {
@@ -1249,9 +1210,7 @@ hold4.addEventListener("click", () => {
         changeColour8();
         greyDice4();
     }
-    console.log("hold4 is ", hold4)
 });
-
 hold5.addEventListener("click", () => {
     if (hold5 != true) {
         hold5 = true;
@@ -1266,19 +1225,14 @@ hold5.addEventListener("click", () => {
         changeColour10();
         greyDice5();
     }
-    console.log("hold5 is ", hold5)
 });
-let rolling = document.getElementById("rolling");
-let pressRollThere = true;
 roll.addEventListener("click", () => {
     if (pressRollThere == true) {
         pressRoll.style.display = "none";
         rolling.style.display = "block";
         pressRollThere = false;
-        console.log("Press Roll is", pressRollThere)
     }
     yahtzeeBonus.style.display = "none";
-    console.log("player 2 is ", player2)
     diceSound.play();
     if (twoPlayers != true) {
         twoPlayerBtn.style.display = "none";
@@ -1287,7 +1241,6 @@ roll.addEventListener("click", () => {
         rolling.style.display = "none";
         if (player1 = true) {
             submitTitle1.style.display = "block";
-            // yahtzeeBonus.style.display = "none";
             if (submit1 != true) {
                 a.style.display = "block";
             }
@@ -1339,7 +1292,6 @@ roll.addEventListener("click", () => {
         }
         if (player2 = true) {
             submitTitle2.style.display = "block";
-            // yahtzeeBonus2.style.display = "none";
             if (submit1_2 != true) {
                 a2.style.display = "block";
             }
@@ -1414,7 +1366,6 @@ roll.addEventListener("click", () => {
             greyDice5();
         }
         let randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
-        console.log(randomNumbers)
         rolls += 1;
         showRolls.innerHTML = `Rolls: ${rolls}`;
         if (rolls == 3) {
@@ -1462,15 +1413,12 @@ submit1.addEventListener("click", () => {
         hideBlackDice();
         hideDice();
     }
-
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit1 != false) {
         submit1 = true;
-        console.log("submit1 is ", submit1)
         hideTickBox()
         roll.style.display = "block";
         changeBack1();
@@ -1487,13 +1435,9 @@ submit1.addEventListener("click", () => {
         }
         if (player1 != false) {
             player1 = false;
-            console.log("player 1 is ", player1)
-            console.log("player 2 is ", player2)
             score1.innerHTML = sum1;
-            console.log("total is ", sum1)
             rolls = 0;
             score += sum1;
-            console.log("your total score is ", score)
             totalScore.innerHTML = score;
             upperBonus();
             upperTotals();
@@ -1514,7 +1458,6 @@ submit1.addEventListener("click", () => {
         }
         setTimeout(function () {
             pressRoll.style.display = "block";
-
             hideBlackDice();
             hideDice();
             // rulesBtn.style.display = "block"
@@ -1526,21 +1469,17 @@ submit1.addEventListener("click", () => {
             hideTickBox2();
         }, 4000)
     }
-    player1 = false;
-    console.log("player 1 is ", player1)
-    player2 = true;
-    console.log("player 2 is", player2)
+    // player1 = false;
+    // player2 = true;
 });
 submit1_2.addEventListener("click", () => {
     pressRollThere = true;
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count 2 is ", submitCount2)
     resetHold();
     if (submit1_2 != false) {
         submit1_2 = true;
-        console.log("submit1 is ", submit1_2)
         hideTickBox2()
         roll.style.display = "block";
         changeBack1_2();
@@ -1556,10 +1495,8 @@ submit1_2.addEventListener("click", () => {
             sum1 += result[i];
         }
         score1_2.innerHTML = sum1;
-        console.log("total is ", sum1)
         rolls = 0;
         player2score += sum1;
-        console.log("player 2 total score is ", player2score)
         totalScore2.innerHTML = player2score;
         upperBonus2();
         upperTotals2();
@@ -1591,10 +1528,8 @@ submit1_2.addEventListener("click", () => {
             hideTickBox();
         }, 4000)
     }
-    player1 = true;
-    console.log("player 1 is ", player1)
-    player2 = false;
-    console.log("player 2 is", player2)
+    // player1 = true;
+    // player2 = false;
 });
 submit2.addEventListener("click", () => {
     pressRollThere = true;
@@ -1607,7 +1542,6 @@ submit2.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit2 != false) {
         submit2 = true;
@@ -1626,10 +1560,8 @@ submit2.addEventListener("click", () => {
             sum2 += result[i];
         }
         score2.innerHTML = sum2;
-        console.log("total is ", sum2);
         rolls = 0;
         score += sum2;
-        console.log("your total score is ", score)
         totalScore.innerHTML = score;
     }
     upperBonus();
@@ -1660,10 +1592,8 @@ submit2.addEventListener("click", () => {
             hideTickBox2();
         }, 4000)
     }
-    player1 = false;
-    console.log("player 1 is ", player1)
-    player2 = true;
-    console.log("player 2 is", player2)
+    // player1 = false;
+    // player2 = true;
 });
 submit2_2.addEventListener("click", () => {
     pressRollThere = true;
@@ -1671,7 +1601,6 @@ submit2_2.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount2)
     resetHold();
     if (submit2_2 != false) {
         submit2_2 = true;
@@ -1689,12 +1618,9 @@ submit2_2.addEventListener("click", () => {
         for (let i = 0; i < result.length; i++) {
             sum2 += result[i];
         }
-
         score2_2.innerHTML = sum2;
-        console.log("total is ", sum2);
         rolls = 0;
         player2score += sum2;
-        console.log("your total score is ", player2score)
         totalScore2.innerHTML = player2score;
     }
     upperBonus2();
@@ -1725,10 +1651,8 @@ submit2_2.addEventListener("click", () => {
             hideTickBox();
         }, 4000)
     }
-    player1 = true;
-    console.log("player 1 is ", player1)
-    player2 = false;
-    console.log("player 2 is", player2)
+    // player1 = true;
+    // player2 = false;
 });
 submit3.addEventListener("click", () => {
     pressRollThere = true;
@@ -1741,7 +1665,6 @@ submit3.addEventListener("click", () => {
     submitScore.style.display = "none";
     showRolls.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit3 != false) {
         submit3 = true;
@@ -1760,12 +1683,9 @@ submit3.addEventListener("click", () => {
             sum3 += result[i];
         }
         score3.innerHTML = sum3;
-        console.log("total is ", sum3);
         rolls = 0;
         score += sum3;
-        console.log("your total score is ", score)
         totalScore.innerHTML = score;
-
     }
     upperBonus();
     upperTotals();
@@ -1797,11 +1717,9 @@ submit3.addEventListener("click", () => {
 submit3_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-
     submitScore.style.display = "none";
     showRolls.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit3_2 != false) {
         submit3_2 = true;
@@ -1820,10 +1738,8 @@ submit3_2.addEventListener("click", () => {
             sum3 += result[i];
         }
         score3_2.innerHTML = sum3;
-        console.log("total is ", sum3);
-        rolls2 = 0;
+        rolls = 0;
         player2score += sum3;
-        console.log("your total score is ", player2score)
         totalScore2.innerHTML = player2score;
 
     }
@@ -1841,7 +1757,6 @@ submit3_2.addEventListener("click", () => {
     }
     if (twoPlayers != false) {
         roll.style.display = "none";
-        console.log("I got here")
         setTimeout(function () {
             pressRoll.style.display = "block";
             hideBlackDice();
@@ -1866,7 +1781,6 @@ submit4.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit4 != false) {
         submit4 = true;
@@ -1885,10 +1799,8 @@ submit4.addEventListener("click", () => {
             sum4 += result[i];
         }
         score4.innerHTML = sum4;
-        console.log("total is ", sum4);
         rolls = 0;
         score += sum4;
-        console.log("your total score is ", score)
         totalScore.innerHTML = score;
     }
     upperBonus();
@@ -1921,11 +1833,9 @@ submit4.addEventListener("click", () => {
 submit4_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit4_2 != false) {
         submit4_2 = true;
@@ -1944,10 +1854,8 @@ submit4_2.addEventListener("click", () => {
             sum4 += result[i];
         }
         score4_2.innerHTML = sum4;
-        console.log("total is ", sum4);
         rolls = 0;
         player2score += sum4;
-        console.log("your total score is ", player2score)
         totalScore2.innerHTML = player2score;
     }
     upperBonus2();
@@ -1988,7 +1896,6 @@ submit5.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit5 != false) {
         submit5 = true;
@@ -2007,10 +1914,8 @@ submit5.addEventListener("click", () => {
             sum5 += result[i];
         }
         score5.innerHTML = sum5;
-        console.log("total is ", sum5);
         rolls = 0;
         score += sum5;
-        console.log("your total score is ", score)
         totalScore.innerHTML = score;
     }
     upperBonus();
@@ -2043,11 +1948,9 @@ submit5.addEventListener("click", () => {
 submit5_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit5_2 != false) {
         submit5_2 = true;
@@ -2066,10 +1969,8 @@ submit5_2.addEventListener("click", () => {
             sum5 += result[i];
         }
         score5_2.innerHTML = sum5;
-        console.log("total is ", sum5);
         rolls = 0;
         player2score += sum5;
-        console.log("your total score is ", player2score)
         totalScore2.innerHTML = player2score;
     }
     upperBonus2();
@@ -2110,7 +2011,6 @@ submit6.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit6 != false) {
         submit6 = true;
@@ -2129,10 +2029,8 @@ submit6.addEventListener("click", () => {
             sum6 += result[i];
         }
         score6.innerHTML = sum6;
-        console.log("total is ", sum6);
         rolls = 0;
         score += sum6;
-        console.log("your total score is ", score)
         totalScore.innerHTML = score;
     }
     upperBonus();
@@ -2168,7 +2066,6 @@ submit6_2.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit6_2 != false) {
         submit6_2 = true;
@@ -2187,10 +2084,8 @@ submit6_2.addEventListener("click", () => {
             sum6 += result[i];
         }
         score6_2.innerHTML = sum6;
-        console.log("total is ", sum6);
         rolls = 0;
         player2score += sum6;
-        console.log("your total score is ", player2score)
         totalScore2.innerHTML = player2score;
     }
     upperBonus2();
@@ -2231,7 +2126,6 @@ submit7.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit7 != false) {
         submit7 = true;
@@ -2240,19 +2134,15 @@ submit7.addEventListener("click", () => {
         changeBack8();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         sum7 = randomNumber1 + randomNumber2 + randomNumber3 + randomNumber4 + randomNumber5
-        console.log(randomNumbers)
-
         for (let i = 0; i < randomNumbers.length; i++) {
             let countOfKind = 0;
             for (let j = 0; j < randomNumbers.length; j++) {
                 if (randomNumbers[i] == randomNumbers[j]) {
                     countOfKind++;
                 }
-            } console.log(countOfKind)
+            }
             if (countOfKind >= 3) {
-                console.log("three of a kind")
                 score7.innerHTML = sum7;
-                console.log(sum7)
                 scoreLower += sum7;
                 totalLower.innerHTML = scoreLower;
                 grandTotal.innerHTML = totalUp + scoreLower;
@@ -2282,7 +2172,6 @@ submit7.addEventListener("click", () => {
                     }, 4000)
                 }
                 return
-
             } else {
                 score7.innerHTML = 0;
                 scoreLower += 0;
@@ -2330,11 +2219,9 @@ submit7.addEventListener("click", () => {
 submit7_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount2)
     resetHold();
     if (submit7_2 != false) {
         submit7_2 = true;
@@ -2343,20 +2230,15 @@ submit7_2.addEventListener("click", () => {
         changeBack8_2();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
         sum7 = randomNumber1 + randomNumber2 + randomNumber3 + randomNumber4 + randomNumber5
-        console.log(randomNumbers)
-
         for (let i = 0; i < randomNumbers.length; i++) {
             let countOfKind = 0;
             for (let j = 0; j < randomNumbers.length; j++) {
                 if (randomNumbers[i] == randomNumbers[j]) {
                     countOfKind++;
                 }
-            } console.log(countOfKind)
+            }
             if (countOfKind >= 3) {
-
-                console.log("three of a kind")
                 score7_2.innerHTML = sum7;
-                console.log(sum7)
                 scoreLower2 += sum7;
                 p2totalLower.innerHTML = scoreLower2;
                 grandTotal2.innerHTML = totalUp2 + scoreLower2;
@@ -2433,7 +2315,6 @@ submit8.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit8 != false) {
         submit8 = true;
@@ -2442,8 +2323,6 @@ submit8.addEventListener("click", () => {
         changeBack9();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
         sum8 = randomNumber1 + randomNumber2 + randomNumber3 + randomNumber4 + randomNumber5;
-        console.log(randomNumbers)
-
         for (let i = 0; i < randomNumbers.length; i++) {
             let countOfKind = 0;
             for (let j = 0; j < randomNumbers.length; j++) {
@@ -2452,8 +2331,6 @@ submit8.addEventListener("click", () => {
                 }
             }
             if (countOfKind >= 4) {
-
-                console.log("four of a kind")
                 score8.innerHTML = sum8
                 scoreLower += sum8;
                 totalLower.innerHTML = scoreLower;
@@ -2522,11 +2399,9 @@ submit8.addEventListener("click", () => {
 submit8_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount2)
     resetHold();
     if (submit8_2 != false) {
         submit8_2 = true;
@@ -2535,8 +2410,6 @@ submit8_2.addEventListener("click", () => {
         changeBack9_2();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
         sum8 = randomNumber1 + randomNumber2 + randomNumber3 + randomNumber4 + randomNumber5;
-        console.log(randomNumbers)
-
         for (let i = 0; i < randomNumbers.length; i++) {
             let countOfKind = 0;
             for (let j = 0; j < randomNumbers.length; j++) {
@@ -2545,7 +2418,6 @@ submit8_2.addEventListener("click", () => {
                 }
             }
             if (countOfKind >= 4) {
-                console.log("four of a kind")
                 score8_2.innerHTML = sum8
                 scoreLower2 += sum8;
                 p2totalLower.innerHTML = scoreLower2;
@@ -2622,7 +2494,6 @@ submit9.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit9 != false) {
         submit9 = true;
@@ -2630,8 +2501,6 @@ submit9.addEventListener("click", () => {
         roll.style.display = "block";
         changeBack10();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
-        console.log(randomNumbers)
-
         let randomNumbers2 = []
         for (let i = 0; i < randomNumbers.length; i++) {
             for (let j = 0; j < randomNumbers.length; j++) {
@@ -2642,7 +2511,6 @@ submit9.addEventListener("click", () => {
             }
         }
         if (randomNumbers2.length == 13) {
-            console.log("full house")
             score9.innerHTML = 25;
             scoreLower += 25;
             totalLower.innerHTML = scoreLower;
@@ -2683,11 +2551,9 @@ submit9.addEventListener("click", () => {
 submit9_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount2)
     resetHold();
     if (submit9_2 != false) {
         submit9_2 = true;
@@ -2695,8 +2561,6 @@ submit9_2.addEventListener("click", () => {
         roll.style.display = "block";
         changeBack10_2();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5];
-        console.log(randomNumbers)
-
         let randomNumbers2 = []
         for (let i = 0; i < randomNumbers.length; i++) {
             for (let j = 0; j < randomNumbers.length; j++) {
@@ -2707,7 +2571,6 @@ submit9_2.addEventListener("click", () => {
             }
         }
         if (randomNumbers2.length == 13) {
-            console.log("full house")
             score9_2.innerHTML = 25;
             scoreLower2 += 25;
             p2totalLower.innerHTML = scoreLower2;
@@ -2756,7 +2619,6 @@ submit10.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit10 != false) {
         submit10 = true;
@@ -2768,25 +2630,21 @@ submit10.addEventListener("click", () => {
         const checkSmallStraight2 = [2, 3, 4, 5];
         const checkSmallStraight3 = [3, 4, 5, 6];
         if (checkSmallStraight1.every(elem => randomNumbers.includes(elem))) {
-            console.log('same members');
             score10.innerHTML = 30;
             scoreLower += 30;
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
         } else if (checkSmallStraight2.every(elem => randomNumbers.includes(elem))) {
-            console.log('same members');
             score10.innerHTML = 30;
             scoreLower += 30;
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
         } else if (checkSmallStraight3.every(elem => randomNumbers.includes(elem))) {
-            console.log('same members');
             score10.innerHTML = 30;
             scoreLower += 30;
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
         } else {
-            console.log('not the same');
             score10.innerHTML = 0;
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
@@ -2821,11 +2679,9 @@ submit10.addEventListener("click", () => {
 submit10_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount2)
     resetHold();
     if (submit10_2 != false) {
         submit10_2 = true;
@@ -2837,25 +2693,21 @@ submit10_2.addEventListener("click", () => {
         const checkSmallStraight2 = [2, 3, 4, 5];
         const checkSmallStraight3 = [3, 4, 5, 6];
         if (checkSmallStraight1.every(elem => randomNumbers.includes(elem))) {
-            console.log('same members');
             score10_2.innerHTML = 30;
             scoreLower2 += 30;
             p2totalLower.innerHTML = scoreLower2;
             grandTotal2.innerHTML = totalUp2 + scoreLower2;
         } else if (checkSmallStraight2.every(elem => randomNumbers.includes(elem))) {
-            console.log('same members');
             score10_2.innerHTML = 30;
             scoreLower2 += 30;
             p2totalLower.innerHTML = scoreLower2;
             grandTotal2.innerHTML = totalUp2 + scoreLower2;
         } else if (checkSmallStraight3.every(elem => randomNumbers.includes(elem))) {
-            console.log('same members');
             score10_2.innerHTML = 30;
             scoreLower2 += 30;
             p2totalLower.innerHTML = scoreLower2;
             grandTotal2.innerHTML = totalUp2 + scoreLower2;
         } else {
-            console.log('not the same');
             score10_2.innerHTML = 0;
             p2totalLower.innerHTML = scoreLower2;
             grandTotal2.innerHTML = totalUp2 + scoreLower2;
@@ -2898,7 +2750,6 @@ submit11.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit11 != false) {
         submit11 = true;
@@ -2913,18 +2764,15 @@ submit11.addEventListener("click", () => {
             scoreLower += 40;
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
-            console.log('same members');
         } else if (checkLargeStraight2.sort().join(',') === randomNumbers.sort().join(',')) {
             score11.innerHTML = 40;
             scoreLower += 40;
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
-            console.log('same members');
         } else {
             score11.innerHTML = 0;
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
-            console.log("not the same")
         }
     }
     if (twoPlayers != true) {
@@ -2956,11 +2804,9 @@ submit11.addEventListener("click", () => {
 submit11_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount2)
     resetHold();
     if (submit11_2 != false) {
         submit11_2 = true;
@@ -2975,18 +2821,15 @@ submit11_2.addEventListener("click", () => {
             scoreLower2 += 40;
             p2totalLower.innerHTML = scoreLower2;
             grandTotal2.innerHTML = totalUp2 + scoreLower2;
-            console.log('same members');
         } else if (checkLargeStraight2.sort().join(',') === randomNumbers.sort().join(',')) {
             score11_2.innerHTML = 40;
             scoreLower2 += 40;
             p2totalLower.innerHTML = scoreLower2;
             grandTotal2.innerHTML = totalUp2 + scoreLower2;
-            console.log('same members');
         } else {
             score11_2.innerHTML = 0;
             p2totalLower.innerHTML = scoreLower2;
             grandTotal2.innerHTML = totalUp2 + scoreLower2;
-            console.log("not the same")
         }
     }
     if (twoPlayers != true) {
@@ -3026,18 +2869,15 @@ submit12.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit12 != false) {
         submit12 = true;
-        console.log("yahtzee submit is ", submit12)
         hideTickBox()
         roll.style.display = "block";
         changeBack13();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
     }
     if (randomNumber1 == randomNumber2 && randomNumber1 == randomNumber3 && randomNumber1 == randomNumber4 && randomNumber1 == randomNumber5) {
-        console.log("yahtzee")
         yahtzeeScore = 50;
         score12.innerHTML = yahtzeeScore;
         scoreLower += 50;
@@ -3074,28 +2914,23 @@ submit12.addEventListener("click", () => {
             hideTickBox2();
         }, 4000)
     }
-    console.log("yahtzee score is ", yahtzeeScore)
     rolls = 0;
 });
 submit12_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount2)
     resetHold();
     if (submit12_2 != false) {
         submit12_2 = true;
-        console.log("yahtzee submit is ", submit12_2)
         hideTickBox2()
         roll.style.display = "block";
         changeBack13_2();
         randomNumbers = [randomNumber1, randomNumber2, randomNumber3, randomNumber4, randomNumber5]
     }
     if (randomNumber1 == randomNumber2 && randomNumber1 == randomNumber3 && randomNumber1 == randomNumber4 && randomNumber1 == randomNumber5) {
-        console.log("yahtzee")
         yahtzeeScore2 = 50;
         score12_2.innerHTML = yahtzeeScore2;
         scoreLower2 += 50;
@@ -3132,7 +2967,6 @@ submit12_2.addEventListener("click", () => {
             hideTickBox();
         }, 4000)
     }
-    console.log("yahtzee score is ", yahtzeeScore)
     rolls = 0;
 });
 submit13.addEventListener("click", () => {
@@ -3146,7 +2980,6 @@ submit13.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
-    console.log("submit count is ", submitCount)
     resetHold();
     if (submit13 != false) {
         submit13 = true;
@@ -3193,7 +3026,6 @@ submit13_2.addEventListener("click", () => {
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
-    console.log("submit count is ", submitCount2)
     resetHold();
     if (submit13_2 != false) {
         submit13_2 = true;
@@ -3236,7 +3068,6 @@ submit13_2.addEventListener("click", () => {
 submit14.addEventListener("click", () => {
     submit14 = true;
     n.style.display = "none";
-    console.log("yahtzee score is ", yahtzeeScore)
     if (yahtzeeScore != 0) {
         if (randomNumber1 == randomNumber2 && randomNumber1 == randomNumber3 && randomNumber1 == randomNumber4 && randomNumber1 == randomNumber5) {
             yahtzeeBonusScore += 100;
@@ -3244,11 +3075,9 @@ submit14.addEventListener("click", () => {
             hold.style.display = "none";
             score14.innerHTML = yahtzeeBonusScore;
             yahtzeeBonus.style.display = "block";
-            console.log("yes")
             scoreLower += 100;
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
-            console.log("lower score is ", scoreLower)
             changeBack15();
             if (rolls == 3) {
                 submitScore.style.display = "none"
@@ -3257,7 +3086,6 @@ submit14.addEventListener("click", () => {
     } else {
         score14.innerHTML = yahtzeeBonusScore;
         n.style.display = "none";
-        // roll.style.display = "none";
         yahtzeeBonus.style.display = "block";
         scoreLower += yahtzeeBonusScore;
         totalLower.innerHTML = scoreLower;
@@ -3269,9 +3097,7 @@ submit14.addEventListener("click", () => {
 });
 submit14_2.addEventListener("click", () => {
     submit14_2 = true;
-
     n2.style.display = "none";
-    console.log("yahtzee score is ", yahtzeeScore2)
     if (yahtzeeScore2 != 0) {
         if (randomNumber1 == randomNumber2 && randomNumber1 == randomNumber3 && randomNumber1 == randomNumber4 && randomNumber1 == randomNumber5) {
             yahtzeeBonusScore2 += 100;
@@ -3279,11 +3105,9 @@ submit14_2.addEventListener("click", () => {
             hold.style.display = "none";
             score14_2.innerHTML = yahtzeeBonusScore2;
             yahtzeeBonus.style.display = "block";
-            console.log("yes")
             scoreLower2 += 100;
             p2totalLower.innerHTML = scoreLower2;
             grandTotal2.innerHTML = totalUp2 + scoreLower2;
-            console.log("lower score is ", scoreLower2)
             changeBack15_2();
             if (rolls == 3) {
                 submitScore.style.display = "none";
@@ -3303,8 +3127,6 @@ submit14_2.addEventListener("click", () => {
 });
 submit15.addEventListener("click", () => {
     submit15 = true;
-
-    console.log("yahtzee score is ", yahtzeeScore)
     if (yahtzeeScore != 0) {
         if (randomNumber1 == randomNumber2 && randomNumber1 == randomNumber3 && randomNumber1 == randomNumber4 && randomNumber1 == randomNumber5) {
             yahtzeeBonusScore += 100;
@@ -3313,11 +3135,9 @@ submit15.addEventListener("click", () => {
             score14.innerHTML = yahtzeeBonusScore;
             o.style.display = "none";
             yahtzeeBonus.style.display = "block";
-            console.log("yes")
             scoreLower += 100;
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
-            console.log("lower score is ", scoreLower)
             changeBack15();
             if (rolls == 3) {
                 submitScore.style.display = "none"
@@ -3337,8 +3157,6 @@ submit15.addEventListener("click", () => {
 });
 submit15_2.addEventListener("click", () => {
     submit15_2 = true;
-
-    console.log("yahtzee score is ", yahtzeeScore2)
     if (yahtzeeScore2 != 0) {
         if (randomNumber1 == randomNumber2 && randomNumber1 == randomNumber3 && randomNumber1 == randomNumber4 && randomNumber1 == randomNumber5) {
             yahtzeeBonusScore2 += 100;
@@ -3347,11 +3165,9 @@ submit15_2.addEventListener("click", () => {
             score14_2.innerHTML = yahtzeeBonusScore2;
             o2.style.display = "none";
             yahtzeeBonus.style.display = "block";
-            console.log("yes")
             scoreLower2 += 100;
             p2totalLower.innerHTML = scoreLower2;
             grandTotal2.innerHTML = totalUp2 + scoreLower2;
-            console.log("lower score is ", scoreLower2)
             changeBack15_2();
             if (rolls == 3) {
                 submitScore.style.display = "none";
@@ -3371,7 +3187,6 @@ submit15_2.addEventListener("click", () => {
 });
 submit16.addEventListener("click", () => {
     submit16 = true;
-    console.log("yahtzee score is ", yahtzeeScore)
     if (yahtzeeScore != 0) {
         if (randomNumber1 == randomNumber2 && randomNumber1 == randomNumber3 && randomNumber1 == randomNumber4 && randomNumber1 == randomNumber5) {
             yahtzeeBonusScore += 100;
@@ -3379,12 +3194,10 @@ submit16.addEventListener("click", () => {
             hold.style.display = "none";
             score14.innerHTML = yahtzeeBonusScore;
             p.style.display = "none";
-            console.log("yes")
             scoreLower += 100;
             yahtzeeBonus.style.display = "block";
             totalLower.innerHTML = scoreLower;
             grandTotal.innerHTML = totalUp + scoreLower;
-            console.log("lower score is ", scoreLower)
             changeBack15();
             if (rolls == 3) {
                 submitScore.style.display = "none";
@@ -3405,8 +3218,6 @@ submit16.addEventListener("click", () => {
 });
 submit16_2.addEventListener("click", () => {
     submit16_2 = true;
-
-    console.log("yahtzee score is ", yahtzeeScore2)
     if (yahtzeeScore2 != 0) {
         if (randomNumber1 == randomNumber2 && randomNumber1 == randomNumber3 && randomNumber1 == randomNumber4 && randomNumber1 == randomNumber5) {
             yahtzeeBonusScore2 += 100;
@@ -3414,12 +3225,10 @@ submit16_2.addEventListener("click", () => {
             hold.style.display = "none";
             score14_2.innerHTML = yahtzeeBonusScore2;
             p2.style.display = "none";
-            console.log("yes")
             scoreLower2 += 100;
             yahtzeeBonus.style.display = "block";
             p2totalLower.innerHTML = scoreLower2;
             grandTotal2.innerHTML = totalUp2 + scoreLower2;
-            console.log("lower score is ", scoreLower2)
             changeBack15_2();
             if (rolls == 3) {
                 submitScore.style.display = "none";
