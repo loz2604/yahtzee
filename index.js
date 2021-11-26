@@ -218,6 +218,7 @@ function finalScore2() {
     document.getElementById("finalScore").innerHTML = (`Player 1 Final Score: ${finalTotal}`);
     document.getElementById("finalScore2").innerHTML = (`Player 2 Final Score: ${finalTotal2}`);
 }
+let dice = document.getElementById("dice");
 function finishGame() {
     player1Turn.style.display = "none";
     player2Turn.style.display = "none";
@@ -230,6 +231,7 @@ function finishGame() {
     newGame.style.display = "block";
     finalScore();
     console.log("game over")
+    dice.style.display = "none";
 }
 function finishGame2() {
     player1Turn.style.display = "none";
@@ -241,6 +243,7 @@ function finishGame2() {
     hold.style.display = "none";
     gameOver.style.display = "block";
     newGame.style.display = "block";
+    dice.style.display = "none";
     finalScore();
     finalScore2();
 }
@@ -1453,9 +1456,12 @@ roll.addEventListener("click", () => {
 submit1.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    hideBlackDice();
-    hideDice();
-    pressRoll.style.display = "block";
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
+
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -1506,6 +1512,10 @@ submit1.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+
+            hideBlackDice();
+            hideDice();
             // rulesBtn.style.display = "block"
             player1Turn.style.display = "none";
             player2Turn.style.display = "block";
@@ -1522,10 +1532,6 @@ submit1.addEventListener("click", () => {
 });
 submit1_2.addEventListener("click", () => {
     pressRollThere = true;
-    yahtzeeBonus.style.display = "none";
-    hideBlackDice();
-    hideDice();
-    pressRoll.style.display = "block";
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -1548,19 +1554,14 @@ submit1_2.addEventListener("click", () => {
         for (let i = 0; i < result.length; i++) {
             sum1 += result[i];
         }
-
-        // player2 = false;
         score1_2.innerHTML = sum1;
         console.log("total is ", sum1)
         rolls = 0;
         player2score += sum1;
         console.log("player 2 total score is ", player2score)
         totalScore2.innerHTML = player2score;
-
-
         upperBonus2();
         upperTotals2();
-
     }
     if (twoPlayers != true) {
         if (submitCount == 13) {
@@ -1576,6 +1577,10 @@ submit1_2.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            yahtzeeBonus.style.display = "none";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "block";
             player2Turn.style.display = "none";
             // rulesBtn.style.display = "block"
@@ -1593,9 +1598,11 @@ submit1_2.addEventListener("click", () => {
 submit2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -1640,6 +1647,9 @@ submit2.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "none";
             player2Turn.style.display = "block";
             // rulesBtn.style.display = "block"
@@ -1657,9 +1667,6 @@ submit2.addEventListener("click", () => {
 submit2_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -1705,6 +1712,9 @@ submit2_2.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "block";
             player2Turn.style.display = "none";
             // rulesBtn.style.display = "block"
@@ -1722,9 +1732,11 @@ submit2_2.addEventListener("click", () => {
 submit3.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     submitScore.style.display = "none";
     showRolls.style.display = "none";
     submitCount++;
@@ -1769,6 +1781,9 @@ submit3.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "none";
             player2Turn.style.display = "block";
             roll.style.display = "block";
@@ -1781,9 +1796,7 @@ submit3.addEventListener("click", () => {
 submit3_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+
     submitScore.style.display = "none";
     showRolls.style.display = "none";
     submitCount2++;
@@ -1829,6 +1842,9 @@ submit3_2.addEventListener("click", () => {
         roll.style.display = "none";
         console.log("I got here")
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "block";
             player2Turn.style.display = "none";
             roll.style.display = "block";
@@ -1841,9 +1857,11 @@ submit3_2.addEventListener("click", () => {
 submit4.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -1887,6 +1905,9 @@ submit4.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "none";
             player2Turn.style.display = "block";
             roll.style.display = "block";
@@ -1899,9 +1920,7 @@ submit4.addEventListener("click", () => {
 submit4_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -1945,6 +1964,9 @@ submit4_2.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "block";
             player2Turn.style.display = "none";
             roll.style.display = "block";
@@ -1957,9 +1979,11 @@ submit4_2.addEventListener("click", () => {
 submit5.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -2003,6 +2027,9 @@ submit5.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "none";
             player2Turn.style.display = "block";
             roll.style.display = "block";
@@ -2015,9 +2042,7 @@ submit5.addEventListener("click", () => {
 submit5_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -2061,6 +2086,9 @@ submit5_2.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "block";
             player2Turn.style.display = "none";
             roll.style.display = "block";
@@ -2073,9 +2101,11 @@ submit5_2.addEventListener("click", () => {
 submit6.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -2119,6 +2149,9 @@ submit6.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "none";
             player2Turn.style.display = "block";
             roll.style.display = "block"
@@ -2131,9 +2164,6 @@ submit6.addEventListener("click", () => {
 submit6_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -2177,6 +2207,9 @@ submit6_2.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "block";
             player2Turn.style.display = "none";
             roll.style.display = "block"
@@ -2189,9 +2222,11 @@ submit6_2.addEventListener("click", () => {
 submit7.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -2234,6 +2269,9 @@ submit7.addEventListener("click", () => {
                         return
                     }
                     setTimeout(function () {
+                        pressRoll.style.display = "block";
+                        hideBlackDice();
+                        hideDice();
                         player1Turn.style.display = "none";
                         player2Turn.style.display = "block";
                         roll.style.display = "block";
@@ -2266,6 +2304,9 @@ submit7.addEventListener("click", () => {
                         }
                     }
                     setTimeout(function () {
+                        pressRoll.style.display = "block";
+                        hideBlackDice();
+                        hideDice();
                         player1Turn.style.display = "none";
                         player2Turn.style.display = "block";
                         roll.style.display = "block"
@@ -2288,9 +2329,7 @@ submit7.addEventListener("click", () => {
 submit7_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -2334,6 +2373,9 @@ submit7_2.addEventListener("click", () => {
                         return
                     }
                     setTimeout(function () {
+                        pressRoll.style.display = "block";
+                        hideBlackDice();
+                        hideDice();
                         player1Turn.style.display = "block";
                         player2Turn.style.display = "none";
                         roll.style.display = "block"
@@ -2363,6 +2405,9 @@ submit7_2.addEventListener("click", () => {
                         return
                     }
                     setTimeout(function () {
+                        pressRoll.style.display = "block";
+                        hideBlackDice();
+                        hideDice();
                         player1Turn.style.display = "block";
                         player2Turn.style.display = "none";
                         roll.style.display = "block";
@@ -2379,9 +2424,11 @@ submit7_2.addEventListener("click", () => {
 submit8.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -2424,6 +2471,9 @@ submit8.addEventListener("click", () => {
                         return
                     }
                     setTimeout(function () {
+                        pressRoll.style.display = "block";
+                        hideBlackDice();
+                        hideDice();
                         player1Turn.style.display = "none";
                         player2Turn.style.display = "block";
                         roll.style.display = "block";
@@ -2452,6 +2502,9 @@ submit8.addEventListener("click", () => {
                         return
                     }
                     setTimeout(function () {
+                        pressRoll.style.display = "block";
+                        hideBlackDice();
+                        hideDice();
                         player1Turn.style.display = "none";
                         player2Turn.style.display = "block";
                         roll.style.display = "block";
@@ -2468,9 +2521,7 @@ submit8.addEventListener("click", () => {
 submit8_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -2512,6 +2563,9 @@ submit8_2.addEventListener("click", () => {
                         return
                     }
                     setTimeout(function () {
+                        pressRoll.style.display = "block";
+                        hideBlackDice();
+                        hideDice();
                         player1Turn.style.display = "block";
                         player2Turn.style.display = "none";
                         roll.style.display = "block";
@@ -2540,6 +2594,9 @@ submit8_2.addEventListener("click", () => {
                         return
                     }
                     setTimeout(function () {
+                        pressRoll.style.display = "block";
+                        hideBlackDice();
+                        hideDice();
                         player1Turn.style.display = "block";
                         player2Turn.style.display = "none";
                         roll.style.display = "block";
@@ -2556,9 +2613,11 @@ submit8_2.addEventListener("click", () => {
 submit9.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -2606,6 +2665,9 @@ submit9.addEventListener("click", () => {
                 return
             }
             setTimeout(function () {
+                pressRoll.style.display = "block";
+                hideBlackDice();
+                hideDice();
                 player1Turn.style.display = "none";
                 player2Turn.style.display = "block";
                 roll.style.display = "block";
@@ -2620,9 +2682,7 @@ submit9.addEventListener("click", () => {
 submit9_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -2670,6 +2730,9 @@ submit9_2.addEventListener("click", () => {
                 return
             }
             setTimeout(function () {
+                pressRoll.style.display = "block";
+                hideBlackDice();
+                hideDice();
                 player1Turn.style.display = "block";
                 player2Turn.style.display = "none";
                 roll.style.display = "block";
@@ -2684,9 +2747,11 @@ submit9_2.addEventListener("click", () => {
 submit10.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -2739,6 +2804,9 @@ submit10.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "none";
             player2Turn.style.display = "block";
             roll.style.display = "block";
@@ -2752,9 +2820,7 @@ submit10.addEventListener("click", () => {
 submit10_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -2774,7 +2840,7 @@ submit10_2.addEventListener("click", () => {
             score10_2.innerHTML = 30;
             scoreLower2 += 30;
             p2totalLower.innerHTML = scoreLower2;
-            grandTota2.innerHTML = totalUp2 + scoreLower2;
+            grandTotal2.innerHTML = totalUp2 + scoreLower2;
         } else if (checkSmallStraight2.every(elem => randomNumbers.includes(elem))) {
             console.log('same members');
             score10_2.innerHTML = 30;
@@ -2807,6 +2873,9 @@ submit10_2.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "block";
             player2Turn.style.display = "none";
             roll.style.display = "block";
@@ -2820,9 +2889,11 @@ submit10_2.addEventListener("click", () => {
 submit11.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -2868,6 +2939,9 @@ submit11.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "none";
             player2Turn.style.display = "block";
             roll.style.display = "block";
@@ -2881,9 +2955,7 @@ submit11.addEventListener("click", () => {
 submit11_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -2929,6 +3001,9 @@ submit11_2.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "block";
             player2Turn.style.display = "none";
             roll.style.display = "block"
@@ -2942,9 +3017,11 @@ submit11_2.addEventListener("click", () => {
 submit12.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -2985,6 +3062,9 @@ submit12.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "none";
             player2Turn.style.display = "block";
             roll.style.display = "block";
@@ -2999,9 +3079,7 @@ submit12.addEventListener("click", () => {
 submit12_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
+
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -3042,6 +3120,9 @@ submit12_2.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "block";
             player2Turn.style.display = "none";
             roll.style.display = "block";
@@ -3055,10 +3136,12 @@ submit12_2.addEventListener("click", () => {
 });
 submit13.addEventListener("click", () => {
     pressRollThere = true;
+    if (twoPlayers != true) {
+        pressRoll.style.display = "block";
+        hideBlackDice();
+        hideDice();
+    }
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount++;
@@ -3091,6 +3174,9 @@ submit13.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            pressRoll.style.display = "block";
+            hideBlackDice();
+            hideDice();
             player1Turn.style.display = "none";
             player2Turn.style.display = "block";
             roll.style.display = "block";
@@ -3103,9 +3189,6 @@ submit13.addEventListener("click", () => {
 submit13_2.addEventListener("click", () => {
     pressRollThere = true;
     yahtzeeBonus.style.display = "none";
-    pressRoll.style.display = "block";
-    hideBlackDice();
-    hideDice();
     showRolls.style.display = "none";
     submitScore.style.display = "none";
     submitCount2++;
@@ -3137,6 +3220,9 @@ submit13_2.addEventListener("click", () => {
             return
         }
         setTimeout(function () {
+            hideBlackDice();
+            hideDice();
+            pressRoll.style.display = "block";
             player1Turn.style.display = "block";
             player2Turn.style.display = "none";
             roll.style.display = "block";
